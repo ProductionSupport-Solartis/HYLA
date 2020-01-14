@@ -124,10 +124,8 @@ definitions:
       - PlanModel
     properties:
       Tier:
-        title: "Tier"
         type: string
       EffectiveDate:
-        title: "Effective Date"
         type: string
       ServiceRequestDetail:
         type: object
@@ -179,11 +177,11 @@ definitions:
                 properties:
                   Name:
                     type: string
-            IpDeductibleAmount:
-              title: "Ip Deductible Amount"
+            IpDeductible:
+              title: "Ip Deductible"
               type: string
-            ScDeductibleAmount:
-              title: "Sc Deductible Amount"
+            ScDeductible:
+              title: "Sc Deductible"
               type: string
             ScMonthlyCost:
               title: "Sc Monthly Cost"
@@ -191,10 +189,16 @@ definitions:
             IpMonthlyCost:
               title: "Ip Monthly Cost"
               type: string
-            TotalMonthlyCost:
-              title: "Total Monthly Cost"
+            MonthlyCost:
+              title: "Monthly Cost"
               type: string
-            AnnualCost:
+            IpAnnualCost:
+              title: "Ip Annual Cost"
+              type: string
+            ScAnnualCost:
+              title: "Sc Annual Cost"
+              type: string
+            AnnualCost: 
               title: "Annual Cost"
               type: string
             AnnualSavings:
@@ -202,6 +206,12 @@ definitions:
               type: string
             AnnualSavingsPercentage:
               title: "Annual Savings Percentage"
+              type: string
+            PlanEffectiveFrom:
+              title: "Plan Effective From"
+              type: string
+            PlanEffectiveTo:
+              title: "Plan Effective To"
               type: string
             Features:
               type: array
@@ -236,4 +246,4 @@ definitions:
               Message:
                 type: array
                 items:
-                  type: string        
+                  type: string       
