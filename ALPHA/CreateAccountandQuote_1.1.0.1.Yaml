@@ -175,7 +175,7 @@ definitions:
       sourcePlatform:
         type: string
         default: "Instagram"
-      deviceinformation:
+      deviceInformation:
         type: array
         items: 
           properties:
