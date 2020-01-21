@@ -112,7 +112,7 @@ definitions:
       accountId:
         type: string
         default: "Acc6543"
-      deviceinformation:
+      deviceInformation:
         type: array
         items: 
           properties:
