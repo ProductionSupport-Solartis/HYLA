@@ -21,6 +21,20 @@ paths:
       produces:
         - application/json
       parameters:
+        - name: MODE
+          in: header
+          description: MODE of the product
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Environment in which the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
         - name: Authenication
           in: body
           description: Authentication Service
@@ -49,7 +63,7 @@ definitions:
         properties:
           OwnerId:
             type: string
-            default: "27"
+            default: "2282"
           ResponseType:
             type: string
             enum: ["JSON","XML"]
