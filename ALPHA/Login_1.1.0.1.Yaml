@@ -6,7 +6,7 @@ info:
   
   
 host: commonservice.uat.solartis.net
-basePath: /CommonServiceV3_1/AuthenticationServiceV2
+basePath: /CommonServiceV3_1/AuthenticationServiceV3
 schemes:
   - https
 consumes:
