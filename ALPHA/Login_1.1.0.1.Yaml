@@ -70,7 +70,7 @@ definitions:
             default: "JSON"
           BrowserIp:
             type: string 
-            default: "192.168.5.98"
+            default: "192.168.5.111"
           ServiceRequestVersion:
             type: string
             default: "2.0"
