@@ -5,7 +5,7 @@ info:
   description: To Create quote for Device Insurance
   
   
-host: hylakbv6-4.rc.solartis.net
+host: hylakb.uat.solartis.net
 basePath: /KnowledgeEngineV6_4/KnowledgeBase
 schemes:
   - https
