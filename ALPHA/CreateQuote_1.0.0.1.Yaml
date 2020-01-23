@@ -56,7 +56,7 @@ paths:
           type: string
           format: string
           default: "15"
-        - name: GetAvailablePlans
+        - name: CreateQuote
           in: body
           description: Plan Details
           required: true
