@@ -141,8 +141,7 @@ definitions:
         default: "60515"
       annualBilling:
         type: string
-        default: "100101"
-        
+        default: "100"
         
         
         
@@ -207,7 +206,7 @@ definitions:
         default: "4257698123" 
       annualBilling:
         type: string
-        default: "100101"
+        default: "100"
       customerNickname:
         type: string
         default: "John"
