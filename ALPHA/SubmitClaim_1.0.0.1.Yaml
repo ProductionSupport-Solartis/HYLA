@@ -118,40 +118,49 @@ definitions:
             type: string
             default: "0001"
       communicationPreferences:
+        title: "Communication Preferences"
         type: string
+        enum: ["EMAIL", "EMAIL AND SMS"]
       deviceInformation:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
-              type: string
-            Details:
-              title: "Details"
-              type: string
             deviceId:
-              title: "deviceId"
+              title: "Device ID"
               type: string
+              default: "0001"
             deviceNickName:
-              title: "deviceNickName"
+              title: "Device Nickname"
               type: string
+              default: "Mary's Iphone"
             loss:
               type: array
+              title: "Loss"
               items:
                 properties:
                   dateOfLoss:
+                    title: "Date Of Loss"
                     type: string
+                    default: "01/30/2020"
                   claim:
+                    title: "Claim"
                     type: array
                     items:
                       properties:
                         claimReasons:
+                          title: "Claim Reason"
                           type: string
+                          enum: ["LOST", "STOLEN", "SCREEN", "BATTERY", "BUTTONS", "CHARGING_PORT", "WATER_DAMAGE",]
+                          default: "LOST"
                         claimCause:
+                          title: "CLAIM CAUSE"
                           type: string
+                          default: "I Lost my phone while travelling"
                         preferredDate:
+                          title: "Preffered Date"
                           type: string
                         additionalCommunication:
+                          title: "Additional Communication"
                           type: array
                           items:
                             properties:
@@ -211,12 +220,6 @@ definitions:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
-              type: string
-            Details:
-              title: "Details"
-              type: string
             deviceId:
               title: "deviceId"
               type: string
