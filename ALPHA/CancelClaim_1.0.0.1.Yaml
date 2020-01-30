@@ -112,8 +112,9 @@ definitions:
         items:
           properties:
             deviceId:
-              title: "deviceId"
+              title: "Device ID"
               type: string
+              default: "0001"
             loss:
               type: array
               items:
@@ -123,14 +124,17 @@ definitions:
                   items:
                     properties:
                       claimId:
-                        title: "claimId"
+                        title: "Claim ID"
                         type: string
-                      cancellationDescription:
-                        title: "cancellationDescription"
-                        type: string
+                        default: "HYLACL001"
                       cancellationReason:
-                        title: "cancellationReason"
+                        title: "Cancellation Reason"
                         type: string
+                        enum: ["User Request", "Underwriting Reasons", "Deductible Payment Failure", "User not willing to file Police Complaint", "User not willing to Deactivate device"]
+                      cancellationDescription:
+                        title: "Cancellation Description"
+                        type: string
+                      
   CancelClaim_Success_Response:
     type: object
     required:
