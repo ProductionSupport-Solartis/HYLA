@@ -113,15 +113,10 @@ definitions:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
-              type: string
-            Details:
-              title: "Details"
-              type: string
             deviceId:
               title: "deviceId"
               type: string
+              default: "0001"
             loss:
               type: array
               items:
@@ -131,35 +126,57 @@ definitions:
                     items:
                       properties:
                         claimId:
+                          title: "Claim ID"
                           type: string
+                          default: "HYLACL001"
                         preferredDate:
                           type: string
                         addressInfo:
+                          title: "Address Information"
                           type: array
                           items:
                             properties:
                               addressType:
+                                title: "Address Type"
                                 type: string
+                                enum: ["Repair", "Shipping"]
+                                default: "Shipping"
                               address1:
+                                title: "Address 1"
                                 type: string
+                                default: "1006  Drummond Street"
                               address2:
+                                title: "Address 2"
                                 type: string
                               city:
+                                title: "City"
                                 type: string
+                                default: "Newark"
                               county:
+                                title: "County"
                                 type: string
                               stateRegion:
+                                title: "State Region"
                                 type: string
+                                default: "NJ"
                               zipCode:
+                                title: "Zip Code"
                                 type: string
-                        refundReason:
+                                default: "07103"
+                        signature:
+                          title: "Signature"
                           type: string
                         signatureTimestamp:
+                          title: "Signature Time Stamp"
                           type: string
                         payWithExistingCard:
+                          title: "Pay With Existing Card"
                           type: string
+                          enum: ["Yes", "No"]
                         deactivateDevice:
+                          title: "Deactivate Device"
                           type: string
+                          enum: ["Yes", "No"]
                         
 
   PayAndFileClaim_Success_Response:
