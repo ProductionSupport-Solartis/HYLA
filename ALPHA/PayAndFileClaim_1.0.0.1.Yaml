@@ -110,11 +110,12 @@ definitions:
             type: string
             default: "en"
       deviceInformation:
+        title: "Device Information"
         type: array
         items:
           properties:
             deviceId:
-              title: "deviceId"
+              title: "Device ID"
               type: string
               default: "0001"
             loss:
@@ -224,12 +225,6 @@ definitions:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
-              type: string
-            Details:
-              title: "Details"
-              type: string
             deviceId:
               title: "deviceId"
               type: string
