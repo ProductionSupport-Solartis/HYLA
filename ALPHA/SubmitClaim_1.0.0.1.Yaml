@@ -1,0 +1,305 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis SubmitClaim API for HYLA
+  description: To Submit claim for the Device added in the Account
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_4/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: Submit Claims for the given input
+      operationId: submitClaims
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "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"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "SubmitClaim_1.0.0.1"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: SubmitClaim
+          in: body
+          description: Plan Details
+          required: true
+          schema:
+            $ref: '#/definitions/SubmitClaim_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/SubmitClaim_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  SubmitClaim_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - loginCredentials
+      - deviceInformation
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "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"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      loginCredentials:
+        type: object
+        properties:
+          userId:
+            type: string
+            default: "0001"
+      communicationPreferences:
+        type: string
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            Description:
+              title: "Description"
+              type: string
+            Details:
+              title: "Details"
+              type: string
+            deviceId:
+              title: "deviceId"
+              type: string
+            deviceNickName:
+              title: "deviceNickName"
+              type: string
+            loss:
+              type: array
+              items:
+                properties:
+                  dateOfLoss:
+                    type: string
+                  claim:
+                    type: array
+                    items:
+                      properties:
+                        claimReasons:
+                          type: string
+                        claimCause:
+                          type: string
+                        preferredDate:
+                          type: string
+                        additionalCommunication:
+                          type: array
+                          items:
+                            properties:
+                              value:
+                                type: string
+                              type:
+                                type: string
+                        
+
+  SubmitClaim_Success_Response:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - loginCredentials
+      - deviceInformation
+    properties:
+      communicationPreferences:
+        type: string
+      loginCredentials:
+        type: object
+        properties:
+          userId:
+            type: string
+            default: ""
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaagent"
+          Token:
+            type: string
+            default: "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"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            Description:
+              title: "Description"
+              type: string
+            Details:
+              title: "Details"
+              type: string
+            deviceId:
+              title: "deviceId"
+              type: string
+            deviceNickName:
+              title: "deviceNickName"
+              type: string
+            loss:
+              type: array
+              items:
+                properties:
+                  dateOfLoss:
+                    type: string
+                  claim:
+                    type: array
+                    items:
+                      properties:
+                        claimReasons:
+                          type: string
+                        claimCause:
+                          type: string
+                        serviceContractNumber:
+                          type: string
+                        insurancePolicyNumber:
+                          type: string
+                        claimId:
+                          type: string
+                        claimStatus:
+                          type: string
+                        claimState:
+                          type: string
+                        claimType:
+                          type: string
+                        claimCreatedDt:
+                          type: string
+                        policyId:
+                          type: string
+                        policyBatchId:
+                          type: string
+                        claimVerId:
+                          type: string
+                        claimDenialCode:
+                          type: string
+                        claimDenialReason:
+                          type: string
+                        canBeCancelled:
+                          type: string
+                        deductibleAmount:
+                          type: string
+                        preferredDate:
+                          type: string
+                        additionalCommunication:
+                          type: array
+                          items:
+                            properties:
+                              value:
+                                type: string
+                              type:
+                                type: string
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
