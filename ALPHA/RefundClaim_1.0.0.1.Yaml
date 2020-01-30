@@ -114,15 +114,10 @@ definitions:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
-              type: string
-            Details:
-              title: "Details"
-              type: string
             deviceId:
-              title: "deviceId"
+              title: "Device ID"
               type: string
+              default: "0001"
             loss:
               type: array
               items:
@@ -132,10 +127,15 @@ definitions:
                     items:
                       properties:
                         claimId:
+                          title: "Claim ID"
                           type: string
-                        refundDescription:
-                          type: string
+                          default: "HYLACL0001"
                         refundReason:
+                          title: "Refund Reason"
+                          type: string
+                          default: "User not satisfied"
+                        refundDescription:
+                          title: "Refund Description"
                           type: string
                         settlementDetail:
                           type: array
@@ -143,8 +143,10 @@ definitions:
                             properties:
                               refundDeductibleAmount:
                                 type: string
+                                enum: ["Yes", "No"]
                               returnNonReturnFee:
                                 type: string
+                                enum: ["Yes", "No"]
 
   RefundClaim_Success_Response:
     type: object
