@@ -142,9 +142,11 @@ definitions:
                           items:
                             properties:
                               refundDeductibleAmount:
+                                title: "Refund Deductible Amount"
                                 type: string
                                 enum: ["Yes", "No"]
                               returnNonReturnFee:
+                                title: "Refund Nonreturn Fee"
                                 type: string
                                 enum: ["Yes", "No"]
 
