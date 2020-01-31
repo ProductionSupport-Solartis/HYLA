@@ -32,7 +32,7 @@ paths:
           required: true
           type: string
           format: string
-          default: "SendClaimsData_1.0.0.1"
+          default: "SendClaimData_1.0.0.1"
         - name: OwnerId
           in: header
           description: Name of the event to be invoked
@@ -54,24 +54,24 @@ paths:
           type: string
           format: string
           default: "15"
-        - name: SendClaimsData
+        - name: SendClaimData
           in: body
           description: SendClaimsData
           required: true
           schema:
-            $ref: '#/definitions/SendClaimsData_Request'
+            $ref: '#/definitions/SendClaimData_Request'
       responses:
         '200':
           description: Success Response
           schema:
-            $ref: '#/definitions/SendClaimsData_Success_Response'
+            $ref: '#/definitions/SendClaimData_Success_Response'
         default:
           description: unexpected error
           schema:
             $ref: '#/definitions/errorModel'
 
 definitions:
-  SendClaimsData_Request:
+  SendClaimData_Request:
     type: object
     required:
       - ServiceRequestDetail
@@ -291,7 +291,7 @@ definitions:
                       
                           
                            
-  SendClaimsData_Success_Response:
+  SendClaimData_Success_Response:
     type: object
     required:
       - ServiceRequestDetail
