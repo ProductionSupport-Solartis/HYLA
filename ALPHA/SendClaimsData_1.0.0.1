@@ -174,11 +174,8 @@ definitions:
                                          title: "carrier"
                                          type: string
                                          default: "PROSHIP"
-                                       reverseLogisticsCost:
-                                         title: "reverse Logistics Cost"
-                                         type: string
-                                       tapCenterProcessingCost:
-                                         title: "tap Center Processing Cost"
+                                       forwardLogisticsCost:
+                                         title: "forward Logistics Cost"
                                          type: string
                                    manufacturer:
                                       title: "manufacturer"
@@ -231,9 +228,6 @@ definitions:
                                        reverseLogisticsCost:
                                          title: "reverse Logistics Cost"
                                          type: string
-                                       tapCenterProcessingCost:
-                                         title: "tapCenter Processing Cost"
-                                         type: string
                                    manufacturer:
                                       title: "manufacturer"
                                       type: string    
@@ -282,15 +276,8 @@ definitions:
                                        carrier:
                                          title: "carrier"
                                          type: string
-                                       reverseLogisticsCost:
-                                         title: "reverse Logistics Cost"
-                                         type: string
-                                       tapCenterProcessingCost:
-                                         title: "tapCenter Processing Cost"
-                                         type: string          
-                      
-                          
-                           
+                                          
+          
   SendClaimData_Success_Response:
     type: object
     required:
@@ -392,15 +379,13 @@ definitions:
                                        forwardLogisticsCost:
                                          title: "forward Logistics Cost"
                                          type: string
-                                       reverseLogisticsCost:
-                                         title: "reverse Logistics Cost"
+                                       packagingCost:
+                                         title: "packaging Cost"
                                          type: string
                                        tapCenterProcessingCost:
                                          title: "tapCenter Processing Cost"
                                          type: string
-                                       tapCenterTraigeProcessingCost:
-                                         title: "tapCenter Processing Cost"
-                                         type: string
+                                       
                                    manufacturer:
                                       title: "manufacturer"
                                       type: string    
@@ -448,14 +433,8 @@ definitions:
                                        carrier:
                                          title: "carrier"
                                          type: string
-                                       forwardLogisticsCost:
-                                         title: "forward Logistics Cost"
-                                         type: string
                                        reverseLogisticsCost:
                                          title: "reverse Logistics Cost"
-                                         type: string
-                                       tapCenterProcessingCost:
-                                         title: "tap Center Processing Cost"
                                          type: string
                                        tapCenterTraigeProcessingCost:
                                          title: "tap Center Processing Cost"
@@ -516,18 +495,7 @@ definitions:
                                        carrier:
                                          title: "carrier"
                                          type: string
-                                       forwardLogisticsCost:
-                                         title: "forward Logistics Cost"
-                                         type: string
-                                       reverseLogisticsCost:
-                                         title: "reverse Logistics Cost"
-                                         type: string
-                                       tapCenterProcessingCost:
-                                         title: "tap Center Processing Cost"
-                                         type: string
-                                       tapCenterTraigeProcessingCost:
-                                         title: "tap Center Processing Cost"
-                                         type: string         
+                                       
                       updatedPolicyLimit:
                         title: "updated Policy Limit"
                         type: string  
