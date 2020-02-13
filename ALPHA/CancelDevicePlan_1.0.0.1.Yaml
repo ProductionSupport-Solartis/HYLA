@@ -118,21 +118,22 @@ definitions:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
-              type: string
-            Details:
-              title: "Details"
-              type: string
             deviceId:
               title: "deviceId"
               type: string
-            policyNumber:
-              title: "policyNumber"
-              type: string  
+              default: "654212121241121"
+            deviceCancellationDate:
+              title: "deviceCancellationDate"
+              type: string
+              default: "02/05/2020"
+            cancelType:
+              title: "cancelType"
+              type: string
+              default: "Prorata"
             action:
               title: "action"
-              type: string  
+              type: string
+              default: "Removed"
      
   CancelDevicePlan_Success_Response:
     type: object
@@ -176,25 +177,39 @@ definitions:
       accountId:
         type: string
         default: "Acc6543"
-      deviceInformation:
+      documents:
         type: array
         items:
           properties:
-            Description:
-              title: "Description"
+            name:
+              title: "name"
               type: string
-            Details:
-              title: "Details"
+              default: "Invoice"
+            URL:
+              title: "URL"
               type: string
-            deviceId:
-              title: "deviceId"
-              type: string
-            policyNumber:
-              title: "policyNumber"
-              type: string  
-            returnPremium:
-              title: "returnPremium"
-              type: string  
+      
+      deviceInformation:
+              type: array
+              items:
+                properties:
+                   deviceId:
+                     title: "deviceId"
+                     type: string
+                     default: "654212121241121"
+                   returnPremium:
+                     title: "tier"
+                     type: string
+                     default: "8"
+                   deviceCancellationDate:
+                     title: "planName"
+                     type: string
+                     default: "02/05/2020"
+                   cancelType:
+                     title: "effectiveDate"
+                     type: string
+                     default: "Prorata"
+        
            
   errorModel:
     type: object
