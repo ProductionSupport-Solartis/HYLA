@@ -107,6 +107,9 @@ definitions:
           LanguageCode:
             type: string
             default: "en"
+      accountId:
+        type: string
+        default: "0001"
       deviceInformation:
         type: array
         items:
@@ -169,6 +172,20 @@ definitions:
           RegionCode:
             type: string
             default: "US"
+      accountId:
+         type: string
+         default: "0001"
+      documents:
+         type: array
+         items:
+           properties: 
+             name:
+               title: "name"
+               type: string
+             URL:
+               title: "URL"
+               type: string 
+      
       deviceInformation:
         type: array
         items:
