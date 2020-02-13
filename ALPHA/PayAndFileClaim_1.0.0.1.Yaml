@@ -109,6 +109,9 @@ definitions:
           LanguageCode:
             type: string
             default: "en"
+      accountId:
+            type: string
+            default: "0001"
       deviceInformation:
         title: "Device Information"
         type: array
@@ -221,6 +224,20 @@ definitions:
           LanguageCode:
             type: string
             default: "en"
+      accountId:
+         type: string
+         default: "0001"
+      documents:
+         type: array
+         items:
+           properties: 
+             name:
+               title: "name"
+               type: string
+             URL:
+               title: "URL"
+               type: string 
+         
       deviceInformation:
         type: array
         items:
