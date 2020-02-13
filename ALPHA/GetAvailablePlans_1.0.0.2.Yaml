@@ -3,8 +3,6 @@ info:
   version: "1.0.0"
   title: Solartis GetAvailablePlans API for HYLA
   description: To get Available Plans for Device Insurance from Solartis
-  
-  
 host: hylakb.uat.solartis.net
 basePath: /KnowledgeEngineV6_4/KnowledgeBase
 schemes:
@@ -128,6 +126,7 @@ definitions:
     type: object
     required:
       - tierDetail
+      - ServiceRequestDetail
     properties:
       state:
         type: string
@@ -146,11 +145,8 @@ definitions:
               type: array
               items:
                 properties:
-                   planId:
-                     title: "planId"
-                     type: string
-                   name:
-                     title: "name"
+                   planName:
+                     title: "planName"
                      type: string
                    coverages:
                      type: array
@@ -207,7 +203,28 @@ definitions:
                    planEffectiveTo:
                       title: "planEffectiveTo"
                       type: string
- 
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+          ResponseType:
+            type: string
+          EndClientUserUniqueSessionId:
+            type: string
+          UserName:
+            type: string
+          Token:
+            type: string
+          ServiceRequestVersion:
+            type: string
+          ServiceResponseVersion:
+            type: string
+          RegionCode:
+            type: string
+          LanguageCode:
+            type: string
+            
   errorModel:
     type: object
     required:
