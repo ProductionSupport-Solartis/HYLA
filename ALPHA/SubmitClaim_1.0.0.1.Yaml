@@ -77,7 +77,6 @@ definitions:
     type: object
     required:
       - ServiceRequestDetail
-      - loginCredentials
       - deviceInformation
     properties:
       ServiceRequestDetail:
@@ -111,10 +110,7 @@ definitions:
           LanguageCode:
             type: string
             default: "en"
-      loginCredentials:
-        type: object
-        properties:
-          userId:
+      accountId:
             type: string
             default: "0001"
       communicationPreferences:
@@ -156,35 +152,26 @@ definitions:
                           title: "CLAIM CAUSE"
                           type: string
                           default: "I Lost my phone while travelling"
-                        preferredDate:
-                          title: "Preffered Date"
+                        additionalCommunicationEmail:
+                          title: "Additional Communication Email"
                           type: string
-                        additionalCommunication:
-                          title: "Additional Communication"
-                          type: array
-                          items:
-                            properties:
-                              value:
-                                type: string
-                              type:
-                                type: string
+                        additionalCommunicationPhone:
+                          title: "Additional Communication Phone"
+                          type: string
+                          
                         
 
   SubmitClaim_Success_Response:
     type: object
     required:
       - ServiceRequestDetail
-      - loginCredentials
       - deviceInformation
     properties:
       communicationPreferences:
         type: string
-      loginCredentials:
-        type: object
-        properties:
-          userId:
+      accountId:
             type: string
-            default: ""
+            default: "0001"
       ServiceRequestDetail:
         type: object
         properties:
@@ -268,16 +255,14 @@ definitions:
                           type: string
                         deductibleAmount:
                           type: string
-                        preferredDate:
+                        additionalCommunicationEmail:
+                          title: "Additional Communication Email"
                           type: string
-                        additionalCommunication:
-                          type: array
-                          items:
-                            properties:
-                              value:
-                                type: string
-                              type:
-                                type: string
+                        additionalCommunicationPhone:
+                          title: "Additional Communication Phone"
+                          type: string
+                      
+                       
   errorModel:
     type: object
     required:
