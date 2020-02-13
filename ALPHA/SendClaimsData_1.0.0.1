@@ -107,6 +107,9 @@ definitions:
           LanguageCode:
             type: string
             default: "en"
+      accountId:
+        type: string
+        default: "0001"
       deviceInformation:
         type: array
         items:
@@ -130,6 +133,13 @@ definitions:
                         title: "claim State"
                         type: string
                         default: "DEVICE_SHIPPED" 
+                      repairRescheduleLimt:
+                        title: "repair reschedule limit"
+                        type: string
+                      canBeRescheduled:
+                        title: "Can be rescheduled"
+                        type: string
+                        
                       repairVendor:
                         type: array
                         items:
@@ -146,6 +156,16 @@ definitions:
                           scheduledWindowEnd:
                            title: "scheduled Window End"
                            type: string
+                          rescheduleWindowStart:
+                           title: "reschedule Window Start"
+                           type: string
+                          rescheduleWindowEnd:
+                           title: "reschedule Window End"
+                           type: string
+                          rescheduleRemaining:
+                           title: "reschedule Remaining"
+                           type: string
+                          
                       settlementDetail:
                         type: object
                         properties:
@@ -312,6 +332,19 @@ definitions:
           RegionCode:
             type: string
             default: "US"
+      accountId:
+        type: string
+        default: "0001"
+      documents:
+         type: array
+         items:
+           properties: 
+             name:
+               title: "name"
+               type: string
+             URL:
+               title: "URL"
+               type: string 
       deviceInformation:
         type: array
         items:
@@ -333,6 +366,12 @@ definitions:
                       claimState:
                         title: "claim State"
                         type: string
+                      repairRescheduleLimt:
+                        title: "repair reschedule limit"
+                        type: string
+                      canBeRescheduled:
+                        title: "Can be rescheduled"
+                        type: string
                       repairVendor:
                         type: array
                         items:
@@ -348,6 +387,15 @@ definitions:
                            type: string
                           scheduledWindowEnd:
                            title: "scheduled Window End"
+                           type: string
+                          rescheduleWindowStart:
+                           title: "reschedule Window Start"
+                           type: string
+                          rescheduleWindowEnd:
+                           title: "reschedule Window End"
+                           type: string
+                          rescheduleRemaining:
+                           title: "reschedule Remaining"
                            type: string
                       settlementDetail:
                         type: object
