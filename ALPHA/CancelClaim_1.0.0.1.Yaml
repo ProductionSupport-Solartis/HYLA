@@ -204,11 +204,11 @@ definitions:
                       claimId:
                         title: "claimId"
                         type: string
-                      claimstatus:
-                        title: "claimstatus"
+                      claimStatus:
+                        title: "claimStatus"
                         type: string
-                      claimstate:
-                        title: "claimstate"
+                      claimState:
+                        title: "claimState"
                         type: string
                       claimType:
                         title: "claimType"
@@ -228,7 +228,7 @@ definitions:
                       claimCancelledDt:
                         title: "claimCancelledDt"
                         type: string
-                      settlementdetail:
+                      settlementDetail:
                         type: object
                         properties:
                           refundTransactionId:
