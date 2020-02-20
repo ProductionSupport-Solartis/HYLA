@@ -151,10 +151,6 @@ definitions:
     required:
       - ServiceRequestDetail
     properties:
-      Tier:
-        type: string
-      EffectiveDate:
-        type: string
       ServiceRequestDetail:
         type: object
         properties:
