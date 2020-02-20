@@ -142,8 +142,6 @@ definitions:
       - deviceInformation
       - accountId
     properties:
-      Tier:
-        type: string
       EffectiveDate:
         type: string
       ServiceRequestDetail:
