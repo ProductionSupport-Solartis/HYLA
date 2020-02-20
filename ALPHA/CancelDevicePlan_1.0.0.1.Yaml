@@ -196,7 +196,7 @@ definitions:
                      type: string
                      default: "654212121241121"
                    returnPremium:
-                     title: "tier"
+                     title: "returnPremium"
                      type: string
                      default: "8"
                    deviceCancellationDate:
