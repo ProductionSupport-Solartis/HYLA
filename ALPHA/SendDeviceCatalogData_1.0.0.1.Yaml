@@ -6,7 +6,7 @@ info:
   
   
 host: hylakb.uat.solartis.net
-basePath: /KnowledgeEngineV6_4/KnowledgeBase
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
 schemes:
   - https
 consumes:
