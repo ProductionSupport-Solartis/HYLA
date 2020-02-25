@@ -4,7 +4,7 @@ info:
   title: Solartis GetAvailablePlans API for HYLA
   description: To get Available Plans for Device Insurance from Solartis
 host: hylakb.uat.solartis.net
-basePath: /KnowledgeEngineV6_4/KnowledgeBase
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
 schemes:
   - https
 consumes:
