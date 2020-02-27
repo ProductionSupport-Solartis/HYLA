@@ -222,17 +222,13 @@ definitions:
               type: string
               default: "tokenId"   
             lastFourDigits:
-              type: string
-              default: "Master"   
+              type: string 
             cardExpirationYear:
               type: string
-              default: "tokenId" 
             cardExpirationMonth:
-              type: string
-              default: "tokenId"   
+              type: string  
             routingNumber:
-              type: string
-              default: "Master"   
+              type: string 
             paymentCategory:
               type: string
               default: "CreditCard" 
