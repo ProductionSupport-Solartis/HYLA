@@ -48,7 +48,7 @@ paths:
           required: true
           type: string
           format: string
-          default: "DEV"
+          default: "LIVE"
         - name: Environment
           in: header
           description: Environment in which the event to be invoked
@@ -77,6 +77,7 @@ definitions:
     type: object
     required:
       - ServiceRequestDetail
+      - loginCredentials
     properties:
       ServiceRequestDetail:
         type: object
@@ -111,7 +112,12 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "Acc6543"   
+        default: "ACC001"   
+      loginCredentials:   
+        type: object
+        properties:
+          userId:
+            type: string
 
   GetAccountDetails_Success_Response:
     type: object
