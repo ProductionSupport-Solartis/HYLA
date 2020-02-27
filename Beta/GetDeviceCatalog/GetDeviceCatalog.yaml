@@ -48,7 +48,7 @@ paths:
           required: true
           type: string
           format: string
-          default: "LIVE"
+          default: "DEV"
         - name: Environment
           in: header
           description: Name of the event to be invoked
@@ -56,9 +56,9 @@ paths:
           type: string
           format: string
           default: "15"
-        - name: SendNotifications
+        - name: GetDeviceCatalog
           in: body
-          description: Send Notifications
+          description: Get Device Catalog
           required: true
           schema:
             $ref: '#/definitions/GetDeviceCatalogData_Request'
