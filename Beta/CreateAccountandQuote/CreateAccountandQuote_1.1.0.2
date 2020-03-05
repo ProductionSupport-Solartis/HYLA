@@ -154,6 +154,7 @@ definitions:
       annualBilling: 
         type: string
         default: "Yes"
+        enum: ["Yes", "No"]
       programName:
         type: string
         default: "Lori Device Protection"
@@ -208,16 +209,18 @@ definitions:
               default: "A"
             effectiveDate: 
               type: string
-              default: "03/04/2020"
+              default: "03/05/2020"
             action: 
               type: string
               default: "Added"
             surveySent: 
               type: string
               default: "Yes"
+              enum: ["Yes", "No"]
             userAgreedToCoverage: 
               type: string
               default: "Yes"
+              enum: ["Yes", "No"]
             imei: 
               type: string
               default: "329498988990521"
