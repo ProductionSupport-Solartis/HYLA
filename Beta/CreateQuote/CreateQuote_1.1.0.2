@@ -133,7 +133,7 @@ definitions:
               default: "Red"
             imei: 
               type: string
-              default: "X"
+              default: "329498988990521"
             capacity: 
               type: string
               default: "256GB"
@@ -146,6 +146,7 @@ definitions:
             planName: 
               type: string
               default: "A"
+              enum: ["A", "B", "C", "D"]
             effectiveDate: 
               type: string
               default: "03/04/2020"
@@ -155,9 +156,11 @@ definitions:
             surveySent: 
               type: string
               default: "Yes"
+              enum: ["Yes", "No"]
             userAgreedToCoverage: 
               type: string
               default: "Yes"
+              enum: ["Yes", "No"]
   CreateQuote_Success_Response:
     type: object
     required:
@@ -211,7 +214,7 @@ definitions:
               default: "X"
             imei: 
               type: string
-              default: "X"
+              default: "329498988990521"
             color: 
               type: string
               default: "Red"
