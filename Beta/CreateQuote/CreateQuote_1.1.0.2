@@ -131,9 +131,6 @@ definitions:
             color: 
               type: string
               default: "Red"
-            imei: 
-              type: string
-              default: "329498988990521"
             capacity: 
               type: string
               default: "256GB"
@@ -161,6 +158,12 @@ definitions:
               type: string
               default: "Yes"
               enum: ["Yes", "No"]
+            signature
+              type: string
+              default: "sign.PNG"
+            signatureTimestamp
+              type: string
+              default: "03/26/2020 00:00:00"
   CreateQuote_Success_Response:
     type: object
     required:
