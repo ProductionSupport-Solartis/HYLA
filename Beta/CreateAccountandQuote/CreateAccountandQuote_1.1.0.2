@@ -4,7 +4,6 @@ info:
   title: Solartis CreateAccountandQuote API for HYLA
   description: To Create account and quote for Device Insurance
   
-  
 host: hylakb.uat.solartis.net
 basePath: /KnowledgeEngineV6_6/KnowledgeBase
 schemes:
@@ -221,9 +220,12 @@ definitions:
               type: string
               default: "Yes"
               enum: ["Yes", "No"]
-            imei: 
+            signature
               type: string
-              default: "329498988990521"
+              default: "sign.PNG"
+            signatureTimestamp
+              type: string
+              default: "03/26/2020 00:00:00"
   CreateAccountandQuote_Success_Response:
     type: object
     required:
