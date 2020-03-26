@@ -58,7 +58,7 @@ paths:
           default: "15"
         - name: CreateQuote
           in: body
-          description: Plan Details
+          description: Create Quote
           required: true
           schema:
             $ref: '#/definitions/CreateQuote_Request'
@@ -196,13 +196,13 @@ definitions:
             default: "US"
       accountId:
         type: string
-        default: "Acc6543"
+        default: "1000932"
       deviceInformation:
         type: object
         properties:
             deviceId:
               type: string
-              default: "654212121241121"
+              default: "2003963"
             deviceNickName: 
               type: string
               default: "iPhone X"
@@ -215,9 +215,6 @@ definitions:
             model: 
               type: string
               default: "X"
-            imei: 
-              type: string
-              default: "329498988990521"
             color: 
               type: string
               default: "Red"
@@ -250,7 +247,7 @@ definitions:
               default: "12.6"
             quoteNumber: 
               type: string
-              default: "QT-8547"
+              default: "BAT-236154"
             surveySent: 
               type: string
               default: "Yes"
