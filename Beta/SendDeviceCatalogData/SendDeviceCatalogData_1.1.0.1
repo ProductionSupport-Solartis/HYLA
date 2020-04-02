@@ -116,50 +116,74 @@ definitions:
           properties:
             status:
               type: string
+              default: "Insert"
+              enum: "Insert, Update, Retired"
             productId:
               type: string
+              default: "1334613"
             modelId:
               type: string
+              default: "1268171"
             manufacturer:
               type: string
+              default: "Apple"
             modelName:
               type: string
+              default: "iPhone 7"
             modelNumber:
               type: string
+              default: "A1778"
             internalModelNumber:
               type: string
+              default: "IPHONE9,3"
             capacity:
               type: string
+              default: "128GB"
             color:
               type: string
+              default: "Black"
             releaseDate:
               type: string
+              default: "9/16/2016"
             productType:
               type: string
+              default: "iPhone 7"
             carrier:
               type: string
+              default: "AT&T"
             pricingMinPrice:
               type: string
+              default: "549"
             pricingMaxPrice:
               type: string
+              default: "549"
             averagePrice:
               type: string
+              default: "549"
             pricingTierMin:
               type: string
+              default: "400"
             pricingTierMax:
               type: string
+              default: "599"
             pricingTier:
               type: string
+              default: "$400 to $599"
             pricingTierType:
               type: string
+              default: "Current"
             deviceValue:
               type: string
+              default: "169.9"
             deviceValueType:
               type: string
+              default: "Current"
             deviceSaleValue:
               type: string
+              default: "52.55"
             deviceSaleValueType:
               type: string
+              default: "Historical"
 
 
   SendDeviceCatalogData_Success_Response:
