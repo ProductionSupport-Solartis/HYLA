@@ -327,9 +327,6 @@ definitions:
             monthlyCost: 
               type: string
               default: "14"
-            surveySent: 
-              type: string
-              default: "Yes"
             userAgreedToCoverage: 
               type: string
               default: "Yes"
@@ -357,6 +354,9 @@ definitions:
             initialPremium:
               type: string
               default: "0"
+            productId:
+              type: string
+              default: "12323"
             deviceId:
               type: string
               default: "2003965"
