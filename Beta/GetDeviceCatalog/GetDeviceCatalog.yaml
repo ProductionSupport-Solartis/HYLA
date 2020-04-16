@@ -258,6 +258,8 @@ definitions:
             deviceSaleValueType:
               type: string
               default: "Historical"
+      ResponseStatus:
+        type: string
 
 
             
