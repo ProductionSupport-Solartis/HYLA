@@ -138,6 +138,10 @@ definitions:
               title: "action"
               type: string
               default: "Removed"
+            cancellationTime:
+              title: "cancellationTime"
+              type: string
+              default: "04/16/2020 13:08:00"
      
   CancelDevicePlan_Success_Response:
     type: object
@@ -179,6 +183,9 @@ definitions:
       accountId:
         type: string
         default: "1000000"
+      ResponseStatus:
+        type: string
+        default: "Success"
       documents:
         type: array
         items:
@@ -215,6 +222,10 @@ definitions:
                      title: "cancelReason"
                      type: string
                      default: "DEVICE_LOST"
+                   cancellationTime:
+                     title: "cancellationTime"
+                     type: string
+                     default: "04/16/2020 13:08:00"
         
            
   errorModel:
