@@ -216,8 +216,6 @@ definitions:
       timezone:
         type: string
         default: "EST"
-      memberSince:
-        type: string
       paymentInformation:
         type: object
         properties:
@@ -368,18 +366,6 @@ definitions:
             deviceCancellationDate:
               type: string
               default: "02/05/2020"
-            quotedTime:
-              type: string
-              default: "04/16/2020 13:08:00"
-            lockedTime:
-              type: string
-              default: "04/16/2020 13:08:00"
-            boundTime:
-              type: string
-              default: "04/16/2020 13:08:00" 
-            issuedTime:
-              type: string
-              default: "04/16/2020 13:08:00" 
             planDetails:
               type: array
               items:
