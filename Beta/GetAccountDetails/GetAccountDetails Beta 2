@@ -216,6 +216,8 @@ definitions:
       timezone:
         type: string
         default: "EST"
+      createdTime:
+        type: string
       paymentInformation:
         type: object
         properties:
