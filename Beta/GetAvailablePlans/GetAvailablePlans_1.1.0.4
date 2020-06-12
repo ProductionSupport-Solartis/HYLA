@@ -1,0 +1,264 @@
+swagger: '2.0'
+info:
+  version: "1.1.0.4"
+  title: Solartis GetAvailablePlans API for HYLA
+  description: To get Available Plans for Device Insurance from Solartis
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: Get available plans for the given input
+      operationId: getRates
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "GetAvailablePlans_1.1.0.4"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "DEV"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: GetAvailablePlans
+          in: body
+          description: Plan Details
+          required: true
+          schema:
+            $ref: '#/definitions/GetAvailablePlans_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/GetAvailablePlans_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  GetAvailablePlans_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - tierDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      state:
+        type: string
+        default: "AL"
+      tierDetail:
+        type: array
+        items:
+          properties:
+            tier:
+              title: "tier"
+              type: string
+      effectiveDate:
+        type: string
+        default: "03/05/2020"
+
+  GetAvailablePlans_Success_Response:
+    type: object
+    required:
+      - tierDetail
+      - ServiceRequestDetail
+    properties:
+      state:
+        type: string
+      effectiveDate:
+        type: string
+      responseStatus:
+        type: string
+      tierDetail:
+        type: array
+        items:
+          properties:
+            tier:
+              title: "tier"
+              type: string      
+            planModel:
+              type: array
+              items:
+                properties:
+                   planName:
+                     title: "planName"
+                     type: string
+                   planDisplayName:
+                     title: "planDisplayName"
+                     type: string
+                   coverages:
+                     type: array
+                     items:
+                       properties:
+                         name:
+                           title: "name"
+                           type: string
+                   features:
+                     type: array
+                     items:
+                       properties:
+                         name:
+                           title: "name"
+                           type: string
+                   description:
+                      title: "description"
+                      type: string
+                   details:
+                      title: "details"
+                   ipDeductible:
+                      title: "ipDeductible"
+                      type: string
+                   scDeductible:
+                      title: "scDeductible"
+                      type: string
+                   scMonthlyCost:
+                      title: "scMonthlyCost"
+                      type: string
+                   ipMonthlyCost:
+                      title: "ipMonthlyCost"
+                      type: string
+                   scAnnualCost:
+                      title: "scAnnualCost"
+                      type: string
+                   ipAnnualCost:
+                      title: "ipAnnualCost"
+                      type: string
+                   monthlyCost:
+                      title: "monthlyCost"
+                      type: string
+                   annualCost: 
+                      title: "annualCost"
+                      type: string
+                   annualSavings:
+                      title: "annualSavings"
+                      type: string
+                   annualSavingsPercent:
+                      title: "annualSavingsPercent"
+                      type: string
+                   planEffectiveFrom:
+                      title: "planEffectiveFrom"
+                      type: string
+                   planEffectiveTo:
+                      title: "planEffectiveTo"
+                      type: string
+                   icon:
+                      title: "icon"
+                      type: string
+                   upsellMessage:
+                      title: "upsellMessage"
+                      type: string
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+          ResponseType:
+            type: string
+          EndClientUserUniqueSessionId:
+            type: string
+          UserName:
+            type: string
+          Token:
+            type: string
+          ServiceRequestVersion:
+            type: string
+          ServiceResponseVersion:
+            type: string
+          RegionCode:
+            type: string
+          LanguageCode:
+            type: string
+            
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string  
