@@ -1,0 +1,259 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis UpdateAccountInformation for HYLA
+  description: To Update Account Information for Device Insurance from Solartis
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: Update Account Information for the given input
+      operationId: updateAccountInformation
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "UpdateAccountInformation_1.1.0.4"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: UpdateAccountInformation
+          in: body
+          description: Account details
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateAccountInformation_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/UpdateAccountInformation_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  UpdateAccountInformation_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+        type: string
+        default: "1000000"
+      email:
+        type: string
+        default: "johndoe@gmail.com"
+      phone:
+        type: string
+        default: "4257698123"
+      communicationPreferences:
+        type: string
+        default: "Email" 
+      customerNickname:
+        type: string
+        default: "John"
+      address1:
+        type: string
+        default: "255 S King St"
+      address2:
+        type: string
+        default: "18th Floor"
+      city:
+        type: string
+        default: "Seattle"
+      state:
+        type: string
+        default: "WA"
+      zipCode:
+        type: string
+        default: "98104"
+      timeZone:
+        type: string
+        default: ""
+      accountStatus:
+        type: string
+        default: "Active"
+      loginCredentials:
+        type: object
+        properties:
+            password:
+              title: "password"
+              type: string
+              default: "uhfjdbfdjfdfbjdfjd"
+        
+        
+        
+  UpdateAccountInformation_Success_Response:
+     
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceResponseVersion:
+            type: string 
+            default: "1.0"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+      zipCode:
+        type: string
+        default: "98104"
+      address2:
+        type: string
+        default: "18th Floor"
+      city:
+        type: string
+        default: "Seattle"
+      address1:
+        type: string
+        default: "255 S King St"
+      communicationPreferences:
+        type: string
+        default: "Email"
+      accountId:
+        type: string
+        default: "1000000"
+      phone:
+        type: string
+        default: "4257698123" 
+      customerNickname:
+        type: string
+        default: "John"
+      state:
+        type: string
+        default: "WA"
+      timeZone:
+        type: string
+        default: ""
+      email:
+        type: string
+        default: "johndoe@gmail.com"
+      accountStatus:
+        type: string
+        default: "Active"
+      ResponseStatus:
+        type: string
+    
+     
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
