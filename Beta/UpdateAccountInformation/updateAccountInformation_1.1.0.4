@@ -139,7 +139,7 @@ definitions:
       zipCode:
         type: string
         default: "98104"
-      timeZone:
+      timezone:
         type: string
         default: ""
       accountStatus:
@@ -216,7 +216,7 @@ definitions:
       state:
         type: string
         default: "WA"
-      timeZone:
+      timezone:
         type: string
         default: ""
       email:
@@ -227,8 +227,31 @@ definitions:
         default: "Active"
       ResponseStatus:
         type: string
-    
-     
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            planDetails:
+              type: array
+              items:
+                properties:
+                  documents:
+                    type: array
+                    items:
+                      properties:
+                        name:
+                          type: string
+                        URL:
+                          type: string
+            documents:
+              type: array
+              items:
+                properties:
+                  name:
+                    type: string
+                  URL:
+                    type: string
+            
   errorModel:
     type: object
     required:
