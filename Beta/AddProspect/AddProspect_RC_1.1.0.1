@@ -33,7 +33,7 @@ paths:
           required: true
           type: string
           format: string
-          default: "AddProspect1.1.0.1"
+          default: "AddProspect_1.1.0.1"
         - name: OwnerId
           in: header
           description: Owner ID of the Product
@@ -110,10 +110,8 @@ definitions:
             default: "en"
       email:
         type: string
-        default: "johndoe@gmail.com"
       state:
         type: string
-        default: "WA"
       zipCode: 
         type: string
         default: "98104"
@@ -123,13 +121,10 @@ definitions:
           properties:
             make: 
               type: string
-              default: "Apple"
             model: 
               type: string
-              default: "iPhone X"
       prospectReason: 
         type: string
-        default: "State Not Covered"
         enum: ["State Not Covered","Device Not Covered"]
       prospectCreatedTime:
         type: string
