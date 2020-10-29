@@ -131,7 +131,7 @@ definitions:
               default: "01/17/2020"
             action:
               type: string
-              default: "added"
+              default: "Added"
             boundTime: 
               type: string
             issuedTime: 
