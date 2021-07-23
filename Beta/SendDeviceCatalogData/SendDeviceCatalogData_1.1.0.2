@@ -1,0 +1,240 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis SendDeviceCatalogData API for HYLA
+  description: To send device catalog data for Device Insurance from Solartis
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: Send device catalog data for the given input
+      operationId: sendDeviceCatalogData
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "SendDeviceCatalogData_1.1.0.2"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "DEV"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: Send device catalog
+          in: body
+          description: Plan Details
+          required: true
+          schema:
+            $ref: '#/definitions/SendDeviceCatalogData_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/SendDeviceCatalogData_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  SendDeviceCatalogData_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - DeviceCatalog
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      DeviceCatalog:
+        type: array
+        items:
+          properties:
+            status:
+              type: string
+              default: "Insert"
+              enum: ["Insert", "Update", "Retire"]
+            productId:
+              type: string
+              default: "1334613"
+            modelId:
+              type: string
+              default: "1268171"
+            manufacturer:
+              type: string
+              default: "Apple"
+            modelName:
+              type: string
+              default: "iPhone 7"
+            modelNumber:
+              type: string
+              default: "A1778"
+            internalModelNumber:
+              type: string
+              default: "IPHONE9,3"
+            capacity:
+              type: string
+              default: "128GB"
+            color:
+              type: string
+              default: "Black"
+            releaseDate:
+              type: string
+              default: "9/16/2016"
+            productType:
+              type: string
+              default: "iPhone 7"
+            carrier:
+              type: string
+              default: "AT&T"
+            pricingMinPrice:
+              type: string
+              default: "549"
+            pricingMaxPrice:
+              type: string
+              default: "549"
+            averagePrice:
+              type: string
+              default: "549"
+            pricingTierMin:
+              type: string
+              default: "400"
+            pricingTierMax:
+              type: string
+              default: "599"
+            pricingTier:
+              type: string
+              default: "$400 to $599"
+            pricingTierType:
+              type: string
+              default: "Current"
+            deviceValue:
+              type: string
+              default: "169.9"
+            deviceValueType:
+              type: string
+              default: "Current"
+            deviceSaleValue:
+              type: string
+              default: "52.55"
+            deviceSaleValueType:
+              type: string
+              default: "Historical"
+
+
+  SendDeviceCatalogData_Success_Response:
+    type: object
+    required:
+      - ruleInfoList
+    properties:
+      ruleInfoList:
+        type: array
+        items:
+          properties:
+            deviceErrorMessage:
+              type: string
+            deviceErrorDescription:
+              type: string
+      ResponseStatus:
+            type: string
+            default: "SUCCESS"
+      mode:
+            type: string
+            default: "LIVE"
+      changeVersion:
+            type: string
+            default: "CV_2282_03252020_WS_V6"
+            
+            
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
