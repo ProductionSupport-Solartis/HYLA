@@ -1,0 +1,412 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis CreateQuote API for HYLA
+  description: To Create quote for Device Insurance
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: To create Quote for the given input
+      operationId: CreateQuote
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "CreateQuote_1.1.0.9"
+        - name: OwnerId
+          in: header
+          description: Owner ID of the Product
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: MODE of the product
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Environment in which the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: CreateQuote
+          in: body
+          description: Create Quote
+          required: true
+          schema:
+            $ref: '#/definitions/CreateQuote_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/CreateQuote_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  CreateQuote_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+        type: string
+        default: "1000932"
+      deviceInformation:
+        type: array
+        items: 
+          properties:
+            deviceNickName: 
+              type: string
+              default: "iPhone X"
+            devicePhoneNumber: 
+              type: string
+              default: "+11234567890"
+            make: 
+              type: string
+              default: "Apple"
+            model: 
+              type: string
+              default: "iPhone X"
+            color: 
+              type: string
+              default: "Red"
+            capacity: 
+              type: string
+              default: "256GB"
+            carrier: 
+              type: string
+              default: "Verizon"
+            tier: 
+              type: string
+              default: "6"
+            planName: 
+              type: string
+              default: "C"
+              enum: ["A", "B", "C", "D"]
+            effectiveDate: 
+              type: string
+              default: "03/05/2020"
+            action: 
+              type: string
+              default: "Added"
+            userAgreedToCoverage: 
+              type: string
+              default: "Yes"
+              enum: ["Yes", "No"]
+            signature:
+              type: string
+              default: "sign.PNG"
+            signatureTimestamp:
+              type: string
+              default: "03/30/2020 10:01:00"
+            quotedTime:
+              type: string
+            productId:
+              type: string
+            policyTerm: 
+              type: string
+              default: "Monthly"
+              enum: ["Monthly", "Annual"]
+              
+              
+  CreateQuote_Success_Response:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaagent"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+      accountId:
+        type: string
+        default: "1000932"
+      ResponseStatus:
+        type: string
+      deviceInformation:
+        type: object
+        properties:
+            deviceId:
+              type: string
+              default: "2003963"
+            deviceNickName: 
+              type: string
+              default: "iPhone X"
+            devicePhoneNumber:
+              type: string
+              default: "5254631236"
+            make:
+              type: string
+              default: "iPhone"
+            model: 
+              type: string
+              default: "X"
+            color: 
+              type: string
+              default: "Red"
+            capacity: 
+              type: string
+              default: "256GB"
+            carrier: 
+              type: string
+              default: "Verizon"
+            tier: 
+              type: string
+              default: "6"
+            planName: 
+              type: string
+              default: "21"
+            effectiveDate: 
+              type: string
+              default: "01/17/2020"
+            expirationDate: 
+              type: string
+              default: "01/17/2021"
+            billingTermCost: 
+              type: string
+              default: "14"
+            monthlyCost: 
+              type: string
+              default: "14"
+            annualCost: 
+              type: string
+              default: "12.6"
+            quoteNumber: 
+              type: string
+              default: "BAT-236154"
+            userAgreedToCoverage: 
+              type: string
+              default: "Yes"
+            policyTerm: 
+              type: string
+            term: 
+              type: string
+              default: "12"
+            devicePremium: 
+              type: string
+              default: "14"
+            totalDiscounts: 
+              type: string
+              default: "1.4"
+            maximumClaimLimit: 
+              type: string
+              default: "1500"
+            initialPremium: 
+              type: string
+              default: "0"
+            prorataFactor: 
+              type: string
+              default: "1"
+            signature:
+              type: string
+              default: "sign.PNG"
+            signatureTimestamp:
+              type: string
+              default: "03/26/2020 00:00:00"
+            quotedTime:
+              type: string
+            productId:
+              type: string
+            planDetails:
+              type: array
+              items:
+                properties:
+                  type: 
+                    type: string
+                    default: "ServiceContract"
+                  effectiveDate: 
+                    type: string
+                    default: "01/17/2020"
+                  expirationDate: 
+                    type: string
+                    default: "01/17/2021"
+                  deductible: 
+                    type: string
+                    default: "89"
+                  serviceFee: 
+                    type: string
+                    default: "89"
+                  screenCrackServiceFee: 
+                    type: string
+                    default: "49"
+                  annualCost: 
+                    type: string
+                    default: "10.8"
+                  retailRate: 
+                    type: string
+                    default: "12"
+                  baseRate: 
+                    type: string
+                    default: "11.4"
+                  premium: 
+                    type: string
+                    default: "2.2"
+                  obligorFee: 
+                    type: string
+                    default: "1.5"
+                  contingencyFee: 
+                    type: string
+                    default: "2.5"
+                  multipleDeviceDiscount: 
+                    type: string
+                  annualDiscount: 
+                    type: string
+                  claimFreeDiscount: 
+                    type: string
+                  hylaFee: 
+                    type: string
+                    default: "25"
+                  tax: 
+                    type: string
+                    default: "1.5"
+                  fee: 
+                    type: string
+                    default: "2.5"
+                  reserve: 
+                    type: string
+                    default: "2"
+                  insFee: 
+                    type: string
+                    default: "0.2"
+                  commission: 
+                    type: string
+                    default: "0.2"
+                  admin: 
+                    type: string
+                    default: "0.2"
+                  specialCreditType: 
+                    type: string
+                  specialCreditValue: 
+                    type: string
+                  specialCreditAmount: 
+                    type: string
+                  finalPrice:
+                    type: string
+                  RuleInformationList:
+                    type: array
+                    items:
+                      properties:
+                        Message: 
+                          type: string
+                        Status: 
+                          type: string
+                        ErrorCode: 
+                          type: string
+                          
+                  coverages:
+                    type: array
+                    items:
+                      properties:
+                        name: 
+                          type: string
+                          default: "Accidental_Damage"
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
