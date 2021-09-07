@@ -171,24 +171,31 @@ definitions:
       communicationPreferences: 
         type: string
         default: "Email"
+        description: communication preference opted by the insured
       customerNickname: 
         type: string
         default: "Joe"
+        description: nick name of the insured
       address1: 
         type: string
         default: "5300 Katrine Ave"
+        description: address line 1 of the insured
       address2: 
         type: string
         default: "Downers Grove"
+        description: address line 2 of the insured
       city: 
         type: string
         default: "Illinois"
+        description: city of the insured
       state: 
         type: string
         default: "IL"
+        description: state of the insured
       zipCode: 
         type: string
         default: "60515"
+        description: zipcode of the insured
       programName: 
         type: string
         default: "Lori Device Protection"
@@ -219,37 +226,49 @@ definitions:
       timezone:
         type: string
         default: "EST"
+        description: timezone of the insured
       createdTime:
         type: string
+        description: account created time
       paymentInformation:
         type: object
         properties:
             cardType:
               type: string
-              default: "Master"   
+              default: "Master"
+              description: insured's credit card type
             tokenId:
               type: string
-              default: "tokenId"   
+              default: "tokenId"  
+              description: token id generated from OneInc
             lastFourDigits:
               type: string 
+              description: last four digits of the card number
             cardExpirationYear:
               type: string
+              description: expiration date of the card
             cardExpirationMonth:
-              type: string  
-            routingNumber:
               type: string 
+              description: expiration month of the card
+            routingNumber:
+              type: string
+              description:routing number
             paymentCategory:
               type: string
+              description: payment category
               default: "CreditCard" 
             holderZip:
               type: string
-              default: "60515"   
+              default: "60515" 
+              description: zip code of the card holder
             holderAddress:
               type: string
               default: "5300 Katrine Ave, Downers Grove, IL" 
+              description: address of the card holder
             customerName:
               type: string
-              default: "John"  
+              default: "John"
+              description: card holder name
       documents:
         type: array
         items:
@@ -273,35 +292,46 @@ definitions:
             effectiveDate: 
               type: string
               default: "01/17/2020"
+              description: effective date of the policy
             expirationDate: 
               type: string
               default: "01/17/2021"  
+              description: expiration date of the device
             policyTerm:
               type: string
+              description: term of the policy
             carrier: 
               type: string
               default: "Verizon"
+              description: device carrier
             model: 
               type: string
               default: "iPhone X"
+              description: device model
             make:
               type: string
               default: "Apple"
+              description: device make
             color: 
               type: string
               default: "Red"
+              description: device color
             capacity: 
               type: string
               default: "256GB"
+              description: device capacity
             policyNumber:
               type: string
               default: "POL-13714"
+              description: device policy number
             planName: 
               type: string
               default: "A"
+              description: plan name of the policy
             term: 
               type: string
               default: "12 months"
+              description: policy term
             diagnosticComplete:
               type: string
               default: "Yes"
@@ -311,68 +341,88 @@ definitions:
             cancelType:
               type: string
               default: "Prorata"
+              description: type of cancellation
             cancelReason:
               type: string
+              description: reason for cancellation
             imei: 
               type: string
               default: "329498988990521"
+              description: imei number of the device
             annualCost: 
               type: string
               default: "12.6"
+              description: annual cost of the policy
             tier: 
               type: string
               default: "6"
+              description: tier of the device
             quoteNumber: 
               type: string
               default: "BAT-236156"
+              description: quote number of the policy
             deviceNickName: 
               type: string
               default: "iPhone X"
+              description: device nick name
             devicePhoneNumber:
               type: string
               default: "5254631236"
+              description: device phone number
             billingTermCost:
               type: string
               default: "14"
+              description: Cost to be charged for the current billing term
             monthlyCost: 
               type: string
               default: "14"
+              description: monthly cost of the policy
             userAgreedToCoverage: 
               type: string
               default: "Yes"
             signature: 
               type: string
               default: "Sign.PNG"
+              description: signature of the insured
             signatureTimestamp: 
               type: string
               default: "01/17/2020 03:14:07"
+              description: signature time stamp
             returnPremium: 
               type: string
               default: "8"
+              description: premium returned to the user in case of cancellation
             prorataFactor:
               type: string
               default: "1"
+              description: Prorata factor
             devicePremium: 
               type: string
               default: "14"
+              description: device permium
             totalDiscounts: 
               type: string
               default: "1.4"
+              description: sum of applicable discounts
             maximumClaimLimit: 
               type: string
-              default: "1500"
+              default: "1500"     
+              description: maximum limit applicable per covered claim  
             initialPremium:
               type: string
               default: "0"
             productId:
               type: string
               default: "12323"
+              description: product id of each device
             deviceId:
               type: string
               default: "2003965"
+              description: unique id generated for each device
             deviceCancellationDate:
               type: string
               default: "02/05/2020"
+              description: Cancellation effective date
             planDetails:
               type: array
               items:
