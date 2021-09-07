@@ -441,33 +441,43 @@ definitions:
                     default: "ServiceContract"
                   policyStatus:
                     type: string
+                    description: status of the policy
                   effectiveDate: 
                     type: string
                     default: "01/17/2020"
+                    description: effective date of the policy
                   expirationDate: 
                     type: string
                     default: "01/17/2021"
+                    description: expiration date of the policy
                   deductible: 
                     type: string
                     default: "89"
+                    description: deductible charged in case of IP Claims
                   serviceFee: 
                     type: string
                     default: "99"
+                    description: service fee charged in case of SC Claims
                   screenCrackServiceFee: 
                     type: string
                     default: "49"
+                    description: service fee to be charged in case of screen
                   policyNumber:
                     type: string
                     default: "SC-HYL10000001"
+                    description: Policy number 
                   monthlyCost: 
                     type: string
                     default: "12"
+                    description: monthly cost of the policy
                   annualCost: 
                     type: string
                     default: "10.8"
+                    description: annual cost of the policy
                   salesTax:
                     type: string
                     default: "2.2"
+                    description: sales tax calculated from tax cloud
                   retailRate: 
                     type: string
                     default: "0.5"
@@ -538,49 +548,65 @@ definitions:
                       properties:
                          claimReasons:
                           type: string
-                          default: "WATER_DAMAGE"  
+                          default: "WATER_DAMAGE"
+                          description: claim reason provided during claim submission
                          claimCause:
                           type: string
                           default: "I dropped my phone in water"
+                          description: Cause of the claim 
                          claimId:
                           type: string
-                          default: "HYLACL0001"  
+                          default: "HYLACL0001"
+                          description: unique id generated for each claim
                          claimStatus:
                           type: string
                           default: "CLOSED"
+                          description: status of the claim
                          claimState:
                           type: string
-                          default: "CLAIM_CLOSED"  
+                          default: "CLAIM_CLOSED" 
+                          description: state of the claim
                          claimType:
                           type: string
                           default: "ADVANCED_EXCHANGE"
+                          description: type of the claim
                          claimCreatedDt:
                           type: string
-                          default: "02/01/2020"  
+                          default: "02/01/2020" 
+                          description: claim created date
                          claimDenialCode:
                           type: string
+                          description: Claim denial Code
                          claimDenialReason:
                           type: string
+                          description: Claim denial reason
                          canBeCancelled:
                           type: string
                           default: "No"
+                          description: key to determine whether the claim can or cannot be cancelled
                          deductibleAmount:
                           type: string
-                          default: "259"  
+                          default: "259"
+                          description: deductible amount to be charged during filing claim
                          preferredDate:
                           type: string
+                          description: preferred date of concierge 
                          cancellationDescription:
                           type: string
+                          description: claim cancel description
                          cancellationReason:
                           type: string
+                          description: claim cancel reason
                          repairVendor:
                           type: array
                           items:
                              properties:
                                repairVendorName:
                                  type: string
+                                 description: repair vendor name
                                repairCost:
                                  type: string
+                                 description: repair cost 
                                technicianEnrouteDateTime:
                                  type: string
                                scheduledWindowStart:
