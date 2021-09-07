@@ -671,129 +671,168 @@ definitions:
                                paymentStatus:
                                  type: string
                                  default: "Success"
+                                 description: payment status
                                paymentID:
                                  type: string
-                                 default: "1234"
+                                 default: "234"
+                                 description: payment id
                                refundTransactionId:
                                  type: string
+                                 description: refund transcation id
                                replacementDeviceInfo:
                                  type: object
                                  properties:
                                    manufacturer:
                                       type: string
                                       default: "Apple"
+                                      description: replacement device manufacturer
                                    imeiShipped:
                                       type: string
                                       default: "990000862471854"
+                                      description: replacement device imei
                                    modelName:
                                       type: string
                                       default: "iPhone 7"
+                                      description: replacement device model 
                                    deviceCost:
                                       type: string
                                       default: "169.9"
+                                      description: replacement device cost
                                    capacity:
                                       type: string
                                       default: "128GB"
+                                      description: replacement device capacity
                                    carrier:          
                                       type: string
+                                      description: replacement device carrier
                                    color:
                                       type: string
                                       default: "Black"
+                                      description: replacement device color
                                    hylaProductId:
                                       type: string
                                       default: "1334613"
+                                      description: replacement device product id
                                    internalModelNumber:
                                       type: string
                                       default: "IPHONE9,3"
+                                      description: replacement device internal model number
                                    replacementDeviceShipmentInfo:
                                       type: object
                                       properties:
                                         carrier:
                                            type: string
                                            default: "Verizon"
+                                           description: replacement device shipping carrier
                                         shippingTrackingNumber:
                                            type: string
                                            default: "6201"
+                                           description: replacement device shipping tracking number
                                         deviceShippedDate:
                                            type: string
                                            default: "02/06/2020"
+                                           description: replacement device shipped date
                                         deviceArrivedDateTime:
                                            type: string
                                            default: "02/08/2020"
+                                           description: replacement device arrived date
                                         shipmentMethod:
                                            type: string
                                            default: "Courier"
+                                           description: replacement device shipment method
                                         forwardLogisticsCost:
                                            type: string
                                            default: "15"
+                                           description: shipment forward logistics cost
                                         tapCenterProcessingCost:          
                                            type: string
                                            default: "2"
+                                           description: shipment tap center processing cost
                                         packagingCost:          
                                            type: string
                                            default: "2"
+                                           description: shipment packaging cost
                                    rmaDeviceInfo:
                                       type: object
                                       properties:
                                         manufacturer:
                                            type: string
                                            default: "Apple"
+                                           description: rma device manufacturer
                                         imeiShipped:
                                            type: string
                                            default: "990000862471856"
+                                           description: rma device imei
                                         modelName:
                                            type: string
                                            default: "iPhone 7"
+                                           description: rma device model name
                                         deviceCost:
                                            type: string
                                            default: "500"
+                                           description: rma device cost
                                         correctDeviceReceived:
                                            type: string
                                            default: "Yes"
+                                           description: key to check whether correct device is being returned
                                         capacity:
                                            type: string
                                            default: "128GB"
+                                           description: rma device capacity
                                         color:          
                                            type: string
                                            default: "Blue"
+                                           description: rma device color
                                         carrier:          
                                            type: string
+                                           description: rma device carrier
                                         saleOfReturnedDevice:          
                                            type: string
                                            default: "250"
+                                           description: sale cost of the returned device
                                         hylaProductId:          
                                            type: string
                                            default: "1334613"
+                                           description: rma device product id
                                         internalModelNumber:
                                            type: string
                                            default: "IPHONE9,3"
+                                           description: rma device internal model number
                                         rmaDeviceShipmentInfo:
                                            type: object
                                            properties:
                                              carrier:
                                                type: string
                                                default: "Verizon"
+                                               description: rma device shipping carrier
                                              shippingTrackingNumber:
                                                type: string
+                                               description: rma device shipping tracking number
                                                default: "1265"  
                                              deviceShippedDate:
                                                type: string
                                                default: "02/10/2020"
+                                               description: rma device shipped date
                                              deviceArrivedDateTime:
                                                type: string
                                                default: "02/12/2020"
+                                               description: rma device arrived date
                                              shipmentMethod:  
                                                type: string
                                                default: "Courier"
+                                               description: rma device shipment method
                                              reverseLogisticsCost:
                                                type: string
                                                default: "3"
+                                               description: reverse logistics cost for shipping
                                              tapCenterTriageProcessCost:
                                                type: string
                                                default: "5"
+                                               description: tap center triage processing cost
                                         totalClaimCost:
                                            type: string
                                            default: "229"
+                                           description: total claim cost
                                         incorrectDeviceInfo:
                                            type: object
                                            properties:
@@ -802,72 +841,98 @@ definitions:
                                                properties:
                                                   carrier: 
                                                     type: string
+                                                    description: incorrect device shipping carrier
                                                   shippingTrackingNumber:
                                                     type: string
+                                                    description: incorrect device shipping tracking number
                                                   deviceShippedDate:
                                                     type: string
+                                                    description: incorrect device shipped date
                                                   deviceArrivedDateTime:
                                                     type: string
+                                                    description: incorrect device arrived date
                                                   shipmentMethod:  
                                                     type: string
+                                                    description: incorrect device shipment method
                                                   incorrectLogisticsCost:  
                                                     type: string
+                                                    description: incorrect logistics cost
                                              refundTransactionStatus:
                                                 type: string
+                                                description: refund transaction status
                                             
                          claimPendingCode:
                             type: string
+                            description: claim pending code
                          claimPendingReason:
                             type: string
+                            description: claim pending reason
                          deactivateDevice:
                             type: string
+                            description: key to determine whether the lost device can be deactivated
                          updatedPolicyLimit:
                             type: string
                             default: "1000"
+                            description: updated policy limit
                          repairRescheduleLimit:
                             type: string
+                            description: limit for rescheduling repairs
                          canBeRescheduled:
                             type: string
+                            description: key to determine whether the repair can be rescheduled
                          additionalCommunicationEmail:
                             type: string
                             default: "jack@gmail.com"
+                            description: additional communication preference for claims
                          additionalCommunicationPhone:
                             type: string
                             default: "(555) 555-1234"
+                            description: additional communication preference for claims
                          city:
                             type: string
                             default: "Illinois"
+                            description: insured's city
                          county:
                             type: string
                             default: "Hardin"
+                            description: insured's county
                          address1:
                             type: string
                             default: "5300 Katrine Ave"
+                            description: insured's address line 1
                          address2:
                             type: string
                             default: "Downers Grove"
+                            description: insured's address line 2
                          zipCode:
                             type: string
                             default: "60515"
+                            description: insured's zip code
                          stateRegion:   
                             type: string
                             default: "IL"
+                            description: insured's state
                          addressType:
                             type: string
                             default: "Shipping"
+                            description: adress type for the claim
                          repairOption:
                             type: string
+                            description: repair option opted for the claim
                          communicationPreferences:   
                             type: string
                             default: "Email and SMS"
+                            description: communication preferences selected for claim related communications
                          manualReview:
                           type: array
                           items:
                              properties:
                                code:
                                  type: string
+                                 description: manual review code
                                reason:
                                  type: string
+                                 description: manual review reason
                             
  
   
