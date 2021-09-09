@@ -1,0 +1,696 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis SendClaimsData API for HYLA
+  description: To send Claims data for Device Insurance from Solartis
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: Send claims data for the given input
+      operationId: sendClaimsData
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "SendClaimData_1.1.0.10"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: SendClaimData
+          in: body
+          description: SendClaimsData
+          required: true
+          schema:
+            $ref: '#/definitions/SendClaimData_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/SendClaimData_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  SendClaimData_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+        type: string
+        default: "0001"
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            deviceId:
+              title: "device Id"
+              type: string
+            loss:
+              type: array
+              items:
+                properties:
+                 claim:
+                  type: array
+                  items:
+                    properties:
+                      claimId:
+                        title: "claim Id"
+                        type: string
+                        default: "HYLACL001" 
+                      claimState:
+                        title: "claim State"
+                        type: string
+                        default: "DEVICE_SHIPPED" 
+                      repairRescheduleLimit:
+                        title: "repair reschedule limit"
+                        type: string
+                      canBeRescheduled:
+                        title: "Can be rescheduled"
+                        type: string
+                        
+                      repairVendor:
+                        type: array
+                        items:
+                         properties:
+                          repairCost:
+                           title: "repair Cost"
+                           type: string
+                          technicianEnrouteDateTime:
+                           title: "technician Enroute DateTime"
+                           type: string
+                          scheduledWindowStart:
+                           title: "scheduled Window Start"
+                           type: string
+                          scheduledWindowEnd:
+                           title: "scheduled Window End"
+                           type: string
+                          rescheduleWindowStart:
+                           title: "reschedule Window Start"
+                           type: string
+                          rescheduleWindowEnd:
+                           title: "reschedule Window End"
+                           type: string
+                          rescheduleRemaining:
+                           title: "reschedule Remaining"
+                           type: string
+                          actualRepairWindowStart:
+                           title: "Actual Repair Window Start"
+                           type: string
+                          actualRepairWindowEnd:
+                           title: "Actual Repair Window End"
+                           type: string
+                          serviceRequestId:
+                           title: "Service Request Id"
+                           type: string
+                          serviceRequestCoordinate:
+                           title: "Service Request Coordinate"
+                           type: string
+                          repairVendorName:
+                           title: "Repair Vendor Name"
+                           type: string
+                          repairTicketId:
+                           title: "Repair Ticket Id"
+                           type: string
+                          address1:
+                           title: "Address 1"
+                           type: string
+                           default: "1006  Drummond Street"
+                          address2:
+                           title: "Address 2"
+                           type: string
+                          city:
+                           title: "City"
+                           type: string
+                           default: "Newark"
+                          state:
+                           title: "State"
+                           type: string
+                           default: "NJ"
+                          zipCode:
+                           title: "Zip Code"
+                           type: string
+                      settlementDetail:
+                        type: object
+                        properties:
+                            transactionDate:
+                              title: "Transaction date"
+                              type: string
+                            replacementDeviceInfo:
+                              type: object
+                              properties:
+                                   replacementDeviceShipmentInfo:
+                                    type: object
+                                    properties:
+                                       shippingTrackingNumber:
+                                         title: "shipping Tracking Number"
+                                         type: string
+                                         default: "6201"
+                                       deviceShippedDate:
+                                         title: "device Shipped Date"
+                                         type: string
+                                         default: "01/25/2020"
+                                       deviceArrivedDateTime:
+                                         title: "device Arrived DateTime"
+                                         type: string
+                                       shipmentMethod:
+                                         title: "shipment Method"
+                                         type: string
+                                         default: "Courier"
+                                       carrier:
+                                         title: "carrier"
+                                         type: string
+                                         default: "PROSHIP"
+                                       forwardLogisticsCost:
+                                         title: "forward Logistics Cost"
+                                         type: string
+                                   manufacturer:
+                                      title: "manufacturer"
+                                      type: string 
+                                      default: "samsung"
+                                   imeiShipped:
+                                      title: "imei Shipped"
+                                      type: string 
+                                      default: "1234"
+                                   modelName:
+                                      title: "model Name"
+                                      type: string 
+                                      default: "galaxy"
+                                   deviceCost:
+                                      title: "device Cost"
+                                      type: string 
+                                      default: "10"
+                                   capacity:
+                                      title: "capacity"
+                                      type: string 
+                                      default: "256GB"
+                                   color:
+                                      title: "color"
+                                      type: string 
+                                      default: "blue"
+                                   carrier:
+                                      title: "carrier"
+                                      type: string 
+                                      default: "T-Mobile"
+                                   hylaProductId:
+                                      title: "hyla Product Id"
+                                      type: string 
+                                   fulfillmentVendorName:
+                                      title: "Fulfillment Vendor Name"
+                                      type: string 
+                            rmaDeviceInfo:
+                              type: object
+                              properties:
+                                   rmaDeviceShipmentInfo:
+                                    type: object
+                                    properties:
+                                       shippingTrackingNumber:
+                                         title: "shipping Tracking Number"
+                                         type: string
+                                       deviceShippedDate:
+                                         title: "device Shipped Date"
+                                         type: string
+                                       deviceArrivedDateTime:
+                                         title: "device Arrived Date Time"
+                                         type: string
+                                       shipmentMethod:
+                                         title: "shipment Method"
+                                         type: string
+                                       carrier:
+                                         title: "carrier"
+                                         type: string
+                                       reverseLogisticsCost:
+                                         title: "reverse Logistics Cost"
+                                         type: string
+                                       rmaShippingLabel:
+                                         title: "RMA Shipping Label"
+                                         type: string
+                                   manufacturer:
+                                      title: "manufacturer"
+                                      type: string    
+                                   imeiShipped:
+                                      title: "imei Shipped"
+                                      type: string    
+                                   modelName:
+                                      title: "model Name"
+                                      type: string    
+                                   deviceCost:
+                                      title: "device Cost"
+                                      type: string 
+                                   correctDeviceReceived:
+                                      title: "correct Device Received"
+                                      type: string 
+                                   capacity:
+                                      title: "capacity"
+                                      type: string 
+                                   color:
+                                      title: "color"
+                                      type: string 
+                                   carrier:
+                                      title: "carrier"
+                                      type: string 
+                                   saleOfReturnedDevice:
+                                      title: "sale Of Returned Device"
+                                      type: string 
+                                   hylaProductId:
+                                      title: "hyla Product Id"
+                                      type: string 
+                            incorrectDeviceInfo:
+                              type: object
+                              properties:
+                                   incorrectDeviceShipmentInfo:
+                                    type: object
+                                    properties:
+                                       shippingTrackingNumber:
+                                         title: "shipping Tracking Number"
+                                         type: string
+                                       deviceShippedDate:
+                                         title: "device Shipped Date"
+                                         type: string
+                                       deviceArrivedDateTime:
+                                         title: "device Arrived Date Time"
+                                         type: string
+                                       shipmentMethod:
+                                         title: "shipment Method"
+                                         type: string
+                                       carrier:
+                                         title: "carrier"
+                                         type: string
+                                       incorrectLogisticsCost:
+                                         title: "Incorrect Logistics Cost"
+                                         type: string
+                                          
+          
+  SendClaimData_Success_Response:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - deviceInformation
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaagent"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          BrowserIp:
+            type: string 
+            default: "127.0.0.1"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+      accountId:
+        type: string
+        default: "0001"
+      ResponseStatus:
+        type: string
+      responseCode:
+        type: string
+      authorizationCode:
+        type: string 
+      documents:
+         type: array
+         items:
+           properties: 
+             name:
+               title: "name"
+               type: string
+             URL:
+               title: "URL"
+               type: string 
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            deviceId:
+              title: "device Id"
+              type: string
+            loss:
+              type: array
+              items:
+                properties:
+                 claim:
+                  type: array
+                  items:
+                    properties:
+                      claimId:
+                        title: "claim Id"
+                        type: string
+                      claimState:
+                        title: "claim State"
+                        type: string
+                      claimStatus:
+                        title: "claim Status"
+                        type: string
+                      repairRescheduleLimit:
+                        title: "repair reschedule limit"
+                        type: string
+                      canBeRescheduled:
+                        title: "Can be rescheduled"
+                        type: string
+                      repairVendor:
+                        type: array
+                        items:
+                         properties:
+                          repairCost:
+                           title: "repair Cost"
+                           type: string
+                          technicianEnrouteDateTime:
+                           title: "technician Enroute DateTime"
+                           type: string
+                          scheduledWindowStart:
+                           title: "scheduled Window Start"
+                           type: string
+                          scheduledWindowEnd:
+                           title: "scheduled Window End"
+                           type: string
+                          rescheduleWindowStart:
+                           title: "reschedule Window Start"
+                           type: string
+                          rescheduleWindowEnd:
+                           title: "reschedule Window End"
+                           type: string
+                          rescheduleRemaining:
+                           title: "reschedule Remaining"
+                           type: string
+                          actualRepairWindowStart:
+                           title: "Actual Repair Window Start"
+                           type: string
+                          actualRepairWindowEnd:
+                           title: "Actual Repair Window End"
+                           type: string
+                          serviceRequestId:
+                           title: "Service Request Id"
+                           type: string
+                          serviceRequestCoordinate:
+                           title: "Service Request Coordinate"
+                           type: string
+                          repairVendorName:
+                           title: "Repair Vendor Name"
+                           type: string
+                          repairTicketId:
+                           title: "Repair Ticket Id"
+                           type: string
+                          address1:
+                           title: "Address 1"
+                           type: string
+                           default: "1006  Drummond Street"
+                          address2:
+                           title: "Address 2"
+                           type: string
+                          city:
+                           title: "City"
+                           type: string
+                           default: "Newark"
+                          state:
+                           title: "State"
+                           type: string
+                           default: "NJ"
+                          zipCode:
+                           title: "Zip Code"
+                           type: string
+                      settlementDetail:
+                        type: object
+                        items:
+                          properties:
+                            transactionDate:
+                              title: "Transaction date"
+                              type: string
+                            paymentStatus:
+                              title: "Payment Status"
+                              type: string
+                            replacementDeviceInfo:
+                              type: object
+                              items:
+                                 properties:
+                                   replacementDeviceShipmentInfo:
+                                    type: object
+                                    items:
+                                      properties:
+                                       shippingTrackingNumber:
+                                         title: "shipping Tracking Number"
+                                         type: string
+                                       deviceShippedDate:
+                                         title: "device Shipped Date"
+                                         type: string
+                                       deviceArrivedDateTime:
+                                         title: "device Arrived Date Time"
+                                         type: string
+                                       shipmentMethod:
+                                         title: "shipment Method"
+                                         type: string
+                                       carrier:
+                                         title: "carrier"
+                                         type: string
+                                       forwardLogisticsCost:
+                                         title: "forward Logistics Cost"
+                                         type: string
+                                       packagingCost:
+                                         title: "packaging Cost"
+                                         type: string
+                                       tapCenterProcessingCost:
+                                         title: "tapCenter Processing Cost"
+                                         type: string
+                                       
+                                   manufacturer:
+                                      title: "manufacturer"
+                                      type: string    
+                                   imeiShipped:
+                                      title: "imei Shipped"
+                                      type: string    
+                                   modelName:
+                                      title: "model Name"
+                                      type: string    
+                                   deviceCost:
+                                      title: "device Cost"
+                                      type: string 
+                                   capacity:
+                                      title: "capacity"
+                                      type: string 
+                                   color:
+                                      title: "color"
+                                      type: string
+                                   carrier:
+                                      title: "carrier"
+                                      type: string
+                                   hylaProductId:
+                                      title: "hyla Product Id"
+                                      type: string 
+                                   internalModelNumber:
+                                      title: "internal Model Number"
+                                      type: string 
+                                   fulfillmentVendorName:
+                                      title: "Fulfillment Vendor Name"
+                                      type: string 
+                            rmaDeviceInfo:
+                              type: object
+                              items:
+                                 properties:
+                                   rmaDeviceShipmentInfo:
+                                    type: object
+                                    items:
+                                      properties:
+                                       shippingTrackingNumber:
+                                         title: "shipping Tracking Number"
+                                         type: string
+                                       deviceShippedDate:
+                                         title: "device Shipped Date"
+                                         type: string
+                                       deviceArrivedDateTime:
+                                         title: "device Arrived Date Time"
+                                         type: string
+                                       shipmentMethod:
+                                         title: "shipment Method"
+                                         type: string
+                                       carrier:
+                                         title: "carrier"
+                                         type: string
+                                       reverseLogisticsCost:
+                                         title: "reverse Logistics Cost"
+                                         type: string
+                                       tapCenterTraigeProcessingCost:
+                                         title: "tap Center Processing Cost"
+                                         type: string
+                                       rmaShippingLabel:
+                                         title: "RMA Shipping Label"
+                                         type: string
+                                   manufacturer:
+                                      title: "manufacturer"
+                                      type: string    
+                                   imeiShipped:
+                                      title: "imei Shipped"
+                                      type: string    
+                                   modelName:
+                                      title: "model Name"
+                                      type: string    
+                                   deviceCost:
+                                      title: "device Cost"
+                                      type: string 
+                                   correctDeviceReceived:
+                                      title: "correct Device Received"
+                                      type: string 
+                                   capacity:
+                                      title: "capacity"
+                                      type: string 
+                                   color:
+                                      title: "color"
+                                      type: string
+                                   carrier:
+                                      title: "carrier"
+                                      type: string
+                                   saleOfReturnedDevice:
+                                      title: "sale Of Returned Device"
+                                      type: string 
+                                   hylaProductId:
+                                      title: "hyla Product Id"
+                                      type: string 
+                                   internalModelNumber:
+                                      title: "internal Model Number"
+                                      type: string 
+                            totalClaimCost:
+                              title: "total Claim Cost"
+                              type: string 
+                            incorrectDeviceInfo:
+                              type: object
+                              items:
+                                 properties:
+                                   incorrectDeviceShipmentInfo:
+                                    type: object
+                                    items:
+                                      properties:
+                                       shippingTrackingNumber:
+                                         title: "shipping Tracking Number"
+                                         type: string
+                                       deviceShippedDate:
+                                         title: "device Shipped Date"
+                                         type: string
+                                       deviceArrivedDateTime:
+                                         title: "device Arrived Date Time"
+                                         type: string
+                                       shipmentMethod:
+                                         title: "shipment Method"
+                                         type: string
+                                       carrier:
+                                         title: "carrier"
+                                         type: string
+                                       incorrectLogisticsCost:
+                                         title: "Incorrect Logistics Cost"
+                                         type: string
+                                        
+                                       
+                     
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
