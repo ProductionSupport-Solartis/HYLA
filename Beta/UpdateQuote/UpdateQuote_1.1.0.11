@@ -332,16 +332,16 @@ definitions:
               type: string 
               default: "0"
             installmentDevicePremium:
-              title: "annualCost"
+              title: "installmentDevicePremium"
               type: string
             installmentCount:
-              title: "annualCost"
+              title: "installmentCount"
               type: string
             installmentDiscount:
-              title: "annualCost"
+              title: "installmentDiscount"
               type: string
             installmentCost:
-              title: "annualCost"
+              title: "installmentCost"
               type: string
               prorataFactor:  
               title: "prorataFactor"
