@@ -276,14 +276,19 @@ definitions:
               default: "Yes"              
             installmentDevicePremium: 
               type: string
+              default: "12.6"
             installmentCount: 
               type: string
+              default: "12.6"
             installmentDiscount: 
               type: string
+              default: "12.6"
             installmentCost: 
               type: string
+              default: "12.6"
             userAgreedToCoverage: 
-              type: string              
+              type: string  
+              default: "Yes"            
             policyTerm: 
               type: string
               default: "Annual"
