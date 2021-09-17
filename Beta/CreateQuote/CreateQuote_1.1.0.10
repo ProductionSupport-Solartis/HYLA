@@ -292,6 +292,7 @@ definitions:
             policyTerm: 
               type: string
               default: "Annual"
+              enum: ["Monthly", "Annual"]
             term: 
               type: string
               default: "12"
