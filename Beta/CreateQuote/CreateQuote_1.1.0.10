@@ -286,6 +286,7 @@ definitions:
               type: string              
             policyTerm: 
               type: string
+              default: "Annual"
             term: 
               type: string
               default: "12"
