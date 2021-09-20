@@ -343,7 +343,7 @@ definitions:
             installmentCost:
               title: "installmentCost"
               type: string
-              prorataFactor:  
+            prorataFactor:  
               title: "prorataFactor"
               type: string 
               default: "1.0000"
