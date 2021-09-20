@@ -285,10 +285,7 @@ definitions:
               default: "12.6"
             installmentCost: 
               type: string
-              default: "12.6"
-            userAgreedToCoverage: 
-              type: string  
-              default: "Yes"            
+              default: "12.6"           
             policyTerm: 
               type: string
               default: "Annual"
