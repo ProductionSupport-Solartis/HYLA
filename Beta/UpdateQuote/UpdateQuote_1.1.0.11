@@ -296,9 +296,10 @@ definitions:
               type: string
               default: "12.6"
             billingTerm:
-              title: "annualCost"
+              title: "billingTerm"
               type: string
               default: "Monthly"
+              enum: ["Monthly", "Annual"]
             quoteNumber:
               title: "quoteNumber"
               type: string
