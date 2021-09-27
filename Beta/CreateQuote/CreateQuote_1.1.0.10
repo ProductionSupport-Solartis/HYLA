@@ -443,6 +443,15 @@ definitions:
                   finalPrice:
                     type: string
                     defalut: "76.80"
+                    insFee: 
+                    type: string
+                    default: "0.2"
+                  commission: 
+                    type: string
+                    default: "0.2"
+                  admin: 
+                    type: string
+                    default: "0.2"
                   RuleInformationList:
                     type: array
                     items:
