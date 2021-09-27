@@ -113,7 +113,7 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1003312"
+        default: "1021140"
       deviceInformation:
         type: array
         items:
@@ -121,32 +121,32 @@ definitions:
             deviceId:
               title: "deviceId"
               type: string
-              default: "2003964"
+              default: "2030577"
             deviceNickName: 
               type: string
-              default: "iPhone X"
+              default: "iPhone"
             devicePhoneNumber: 
               type: string
-              default: "+11234567890"
+              default: "+91 8778156318"
             make: 
               type: string
               default: "Apple"
             model: 
               type: string
-              default: "iPhone X"
+              default: "iPhone 11"
             color: 
               type: string
-              default: "Red"
+              default: "Silver"
             capacity: 
               type: string
-              default: "256GB"
+              default: "64GB"
             carrier: 
               type: string
-              default: "Verizon"
+              default: "US Cellular"
             productId:
               title: "productId"
               type: string
-              default: ""
+              default: "1665022"
             userAgreedToCoverage: 
               type: string
               default: "Yes"
@@ -156,11 +156,11 @@ definitions:
               default: "sign.PNG"
             signatureTimestamp:
               type: string
-              default: "03/30/2020 10:01:00"
+              default: "09/27/2021 12:50:17"
             quoteNumber:
               title: "quoteNumber"
               type: string
-              default: "BAT-236155"
+              default: "BAT-290368"
             diagnosticComplete:
               title: "diagnosticComplete"
               type: string
@@ -174,7 +174,7 @@ definitions:
             effectiveDate:
               title: "effectiveDate"
               type: string
-              default: "03/05/2020"
+              default: "09/27/2021"
             action:
               title: "action"
               type: string
@@ -225,7 +225,7 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1003312"
+        default: "1021140"
       ResponseStatus:
         type: string
       deviceInformation:
@@ -235,66 +235,66 @@ definitions:
             deviceId:
               title: "deviceId"
               type: string
-              default: "2003964"
+              default: "2030577"
             productId:
               title: "productId"
               type: string
             deviceNickName:
               title: "deviceNickName"
               type: string
-              default: "iPhone X"
+              default: "iPhone"
             devicePhoneNumber:
               title: "devicePhoneNumber"
               type: string
-              default: "5254631236"
+              default: "+91 8778156318"
             make:
               title: "make"
               type: string
-              default: "iPhone"
+              default: "Apple"
             model:
               title: "model"
               type: string
-              default: "X"
+              default: "iPhone 11"
             color:
               title: "color"
               type: string
-              default: "Red"
+              default: "Silver"
             capacity:
               title: "capacity"
               type: string
-              default: "256GB"
+              default: "64GB"
             carrier:
               title: "carrier"
               type: string
-              default: "Verizon"
+              default: "US Cellular"
             tier:
               title: "tier"
               type: string
-              default: "6"
+              default: "5"
             planName:
               title: "planName"
               type: string
-              default: "A"
+              default: "F"
             effectiveDate:
               title: "effectiveDate"
               type: string
-              default: "01/17/2020"
+              default: "09/27/2021"
             expirationDate:
               title: "expirationDate"
               type: string
-              default: "01/17/2021"
+              default: "09/27/2022"
             billingTermCost:
               title: "billingTermCost"
               type: string
-              default: "14"
+              default: "6.40"
             monthlyCost:
               title: "monthlyCost"
               type: string
-              default: "14"
+              default: "8.00"
             annualCost:
               title: "annualCost"
               type: string
-              default: "12.6"
+              default: "96.00"
             billingTerm:
               title: "billingTerm"
               type: string
@@ -303,7 +303,7 @@ definitions:
             quoteNumber:
               title: "quoteNumber"
               type: string
-              default: "BAT-236155"
+              default: "BAT-290368"
             surveySent:
               title: "surveySent"
               type: string
@@ -319,15 +319,15 @@ definitions:
             devicePremium:
               title: "devicePremium"
               type: string 
-              default: "12.6"
+              default: "76.80"
             totalDiscounts:  
               title: "totalDiscounts"
               type: string 
-              default: "2"
+              default: "0.00"
             maximumClaimLimit:
               title: "maximumClaimLimit"
               type: string 
-              default: "1500"
+              default: "1000"
             initialPremium:
               title: "initialPremium"
               type: string 
@@ -335,15 +335,19 @@ definitions:
             installmentDevicePremium:
               title: "installmentDevicePremium"
               type: string
+              default: "6.40"
             installmentCount:
               title: "installmentCount"
               type: string
+              default: "12"
             installmentDiscount:
               title: "installmentDiscount"
               type: string
+              default: "0.00"
             installmentCost:
               title: "installmentCost"
               type: string
+              default: "8.00"
             prorataFactor:  
               title: "prorataFactor"
               type: string 
@@ -364,7 +368,7 @@ definitions:
               default: "Modified"
             imei: 
               type: string
-              default: "329498988990521"
+              default: "521092055130671"
             signature:
               type: string
               default: "sign.PNG"
@@ -379,94 +383,112 @@ definitions:
                 properties:
                   effectiveDate:
                     type: string
-                    default: "01/17/2020"
+                    default: "09/27/2021"
                   expirationDate:
                     type: string
-                    default: "01/17/2021"
+                    default: "09/27/2022"
                   type:
                     type: string
-                    default: "ServiceContract"
+                    default: "Extended Service Contract"
                   deductible:
                     type: string
                     default: "89"
                   serviceFee:
                     type: string
-                    default: "89"
+                    default: "99"
                   installmentClaimFreeDiscount:
                     type: string
+                    default: "0.00"
                   installmentSalesTax:
                     type: string
+                    default: "0.00"
                   installmentFee:
                     type: string
+                    default: "0.00"
                   installmentFinalPrice:
                     type: string
+                    default: "6.40"
                   installmentContingencyFee:
                     type: string
+                    default: "0.00"
                   installmentObligorFee:
                     type: string
+                    default: "0.00"
                   installmentRetailRate:
                     type: string
+                    default: "8.00"
                   installmentReserve:
                     type: string
+                    default: "3.68"
                   installmentSpecialCreditAmount:
                     type: string
+                    default: "1.60"
                   installmentBaseRate:
                     type: string 
+                    default: "8.00"
                   installmentTax:
                     type: string 
+                    default: "0.00"
                   installmentHylaFee:
                     type: string 
+                    default: "4.32"
                   installmentPremium:
-                    type: string 
+                    type: string
+                    default: "3.68"
                   installmentMultipleDeviceDiscount:
                     type: string 
+                    default: "0.00"
                   installmentCost:
                     type: string
+                    default: "8.00"
                   screenCrackServiceFee:
                     type: string
-                    default: "89"
+                    default: "49.00"
                   monthlyCost:
                     type: string
-                    default: "12"
+                    default: "8.00"
                   annualCost:
                     type: string
-                    default: "10.8"
+                    default: "96.00"
                   retailRate: 
                     type: string
-                    default: "12"
+                    default: "96.00"
                   baseRate:  
                     type: string
-                    default: "11.5"
+                    default: "96.00"
                   premium:
                     type: string
-                    default: "5.5"
+                    default: "44.16"
                   obligorFee:
                     type: string
-                    default: "2.5"
+                    default: "0.00"
                   contingencyFee: 
                     type: string
-                    default: "1.5"
+                    default: "0.00"
                   multipleDeviceDiscount: 
                     type: string
+                    default: "0.00"
                   annualDiscount: 
                     type: string
+                    default: "0.00"
                   claimFreeDiscount: 
                     type: string
+                    default: "0.00"
                   hylaFee:  
                     type: string
-                    default: "1.2"
+                    default: "51.84"
                   tax:
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   fee:
                     type: string
-                    default: "0.5"
+                    default: "4.32"
                   reserve:
                     type: string
-                    default: "0.5"
+                    default: "3.68"
                   salesTax:
                     type: string
-                    default: "2.2"
+                    default: "0.00"
                   insFee:
                     type: string
                     default: "0.3"
