@@ -112,23 +112,23 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1003312"
+        default: "1021140"
       referralCode:
         type: string
-        default: "1255356"
+        default: "REFCOD01"
       deviceInformation:
         type: array
         items: 
           properties:
             deviceId:
               type: string
-              default: "2003964"
+              default: "2030577"
             quoteNumber:
               type: string
-              default: "BAT-236155"
+              default: "BAT-290368"
             effectiveDate: 
               type: string
-              default: "01/17/2020"
+              default: "09/27/2021"
             action:
               type: string
               default: "Added"
@@ -177,7 +177,7 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1003312"
+        default: "1021140"
       ResponseStatus:
         type: string
       responseCode:
@@ -188,7 +188,7 @@ definitions:
         type: string
       referralCode:
         type: string
-        default: "1255356"
+        default: "REFCOD01"
       documents:
         type: object
         properties:
@@ -211,18 +211,20 @@ definitions:
                 type: string
             deviceId:
               type: string
-              default: "2003964"
+              default: "2030577"
             policyNumber:
               type: string
-              default: "POL-13713"
+              default: "POL-143710"
             devicePremium:
               type: string
+              default: "76.80"
             boundTime: 
               type: string
             issuedTime: 
               type: string
             installmentDevicePremium: 
               type: string
+              default: "6.40"
             planDetails:
               type: array
               items:
