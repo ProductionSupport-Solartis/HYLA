@@ -436,13 +436,10 @@ definitions:
                     default: "Percentage"
                   specialCreditValue: 
                     type: string
-                    defalut: "0.20"
                   specialCreditAmount: 
                     type: string
-                    defalut: "1.60"
                   finalPrice:
                     type: string
-                    defalut: "76.80"
                   insFee: 
                     type: string
                     default: "0.2"
