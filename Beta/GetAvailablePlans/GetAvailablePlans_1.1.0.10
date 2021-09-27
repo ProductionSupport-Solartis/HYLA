@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: "1.1.0.4"
+  version: "1.1.0.10"
   title: Solartis GetAvailablePlans API for HYLA
   description: To get Available Plans for Device Insurance from Solartis
 host: hylakb.uat.solartis.net
