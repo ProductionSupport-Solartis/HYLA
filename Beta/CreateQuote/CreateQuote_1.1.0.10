@@ -172,7 +172,7 @@ definitions:
               type: string
             productId:
               type: string
-              default:"1665022"
+              default: "1665022"
             policyTerm: 
               type: string
               default: "Annual"
