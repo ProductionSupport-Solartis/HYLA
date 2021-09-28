@@ -111,7 +111,7 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1009951"   
+        default: "1021140"   
 
 
   GetAccountDetails_Success_Response:
@@ -146,7 +146,7 @@ definitions:
             default: "US"
       accountId:
         type: string
-        default: "1009951"
+        default: "1021140"
         description: unique id generated for each account
       accountStatus:
         type: string
@@ -154,47 +154,47 @@ definitions:
         description: status of the account
       firstName: 
         type: string
-        default: "John"
+        default: "Sanjay"
         description: first name of the insured
       lastName: 
         type: string
-        default: "Doe"
+        default: "Ramesh"
         description: last name of the insured
       email: 
         type: string
-        default: "john@gmail.com"
+        default: "sanjayramesh8778@gmail.com"
         description: email id of the insured
       phone: 
         type: string
-        default: "13245643"
+        default: "+91 8778156318"
         description: phone number of the insured
       communicationPreferences: 
         type: string
-        default: "Email"
+        default: "Email and Direct Mail"
         description: communication preference opted by the insured
       customerNickname: 
         type: string
-        default: "Joe"
+        default: "AK"
         description: nick name of the insured
       address1: 
         type: string
-        default: "5300 Katrine Ave"
+        default: "860 PROVIDENCE HIGHWAY"
         description: address line 1 of the insured
       address2: 
         type: string
-        default: "Downers Grove"
+        default: ""
         description: address line 2 of the insured
       city: 
         type: string
-        default: "Illinois"
+        default: "DEDHAM"
         description: city of the insured
       state: 
         type: string
-        default: "IL"
+        default: "MA"
         description: state of the insured
       zipCode: 
         type: string
-        default: "60515"
+        default: "02026"
         description: zipcode of the insured
       programName: 
         type: string
@@ -239,7 +239,7 @@ definitions:
               description: insured's credit card type
             tokenId:
               type: string
-              default: "tokenId"  
+              default: "2aaecd01-76d2-45c6-b787-e53d24bf1111"  
               description: token id generated from OneInc
             lastFourDigits:
               type: string 
@@ -259,15 +259,15 @@ definitions:
               default: "CreditCard" 
             holderZip:
               type: string
-              default: "60515" 
+              default: "85086" 
               description: zip code of the card holder
             holderAddress:
               type: string
-              default: "5300 Katrine Ave, Downers Grove, IL" 
+              default: "Arizona" 
               description: address of the card holder
             customerName:
               type: string
-              default: "John"
+              default: "Benzamin"
               description: card holder name
       documents:
         type: array
@@ -291,22 +291,23 @@ definitions:
         properties:
             effectiveDate: 
               type: string
-              default: "01/17/2020"
+              default: "09/27/2021"
               description: effective date of the policy
             expirationDate: 
               type: string
-              default: "01/17/2021"  
+              default: "09/28/2021"  
               description: expiration date of the device
             policyTerm:
               type: string
+              default: "76.8000"
               description: term of the policy
             carrier: 
               type: string
-              default: "Verizon"
+              default: "US Cellular"
               description: device carrier
             model: 
               type: string
-              default: "iPhone X"
+              default: "iPhone 11"
               description: device model
             make:
               type: string
@@ -314,19 +315,19 @@ definitions:
               description: device make
             color: 
               type: string
-              default: "Red"
+              default: "White"
               description: device color
             capacity: 
               type: string
-              default: "256GB"
+              default: "64GB"
               description: device capacity
             policyNumber:
               type: string
-              default: "POL-13714"
+              default: "POL-143710"
               description: device policy number
             planName: 
               type: string
-              default: "A"
+              default: "F"
               description: plan name of the policy
             term: 
               type: string
@@ -363,11 +364,11 @@ definitions:
               description: quote number of the policy
             deviceNickName: 
               type: string
-              default: "iPhone X"
+              default: "iPhone"
               description: device nick name
             devicePhoneNumber:
               type: string
-              default: "5254631236"
+              default: "+91 8778156318"
               description: device phone number
             billingTermCost:
               type: string
@@ -375,7 +376,7 @@ definitions:
               description: Cost to be charged for the current billing term
             monthlyCost: 
               type: string
-              default: "14"
+              default: "6.40"
               description: monthly cost of the policy
             userAgreedToCoverage: 
               type: string
@@ -386,7 +387,7 @@ definitions:
               description: signature of the insured
             signatureTimestamp: 
               type: string
-              default: "01/17/2020 03:14:07"
+              default: "09/27/2021 03:14:07"
               description: signature time stamp
             returnPremium: 
               type: string
@@ -398,42 +399,42 @@ definitions:
               description: Prorata factor
             devicePremium: 
               type: string
-              default: "14"
+              default: "6.4000"
               description: device permium
             totalDiscounts: 
               type: string
-              default: "1.4"
+              default: "0.00"
               description: sum of applicable discounts
             installmentDevicePremium: 
               type: string
-              default: "1.4"
+              default: "6.4000"
             installmentCount: 
               type: string
-              default: "1.4"
+              default: "12"
             installmentDiscount: 
               type: string
-              default: "1.4"
+              default: "0.00"
             installmentCost: 
               type: string
-              default: "1.4"
+              default: "8.00"
             maximumClaimLimit: 
               type: string
-              default: "1500"     
+              default: "1000"     
               description: maximum limit applicable per covered claim  
             initialPremium:
               type: string
-              default: "0"
+              default: "6.40"
             productId:
               type: string
-              default: "12323"
+              default: "1665022"
               description: product id of each device
             deviceId:
               type: string
-              default: "2003965"
+              default: "2030577"
               description: unique id generated for each device
             deviceCancellationDate:
               type: string
-              default: "02/05/2020"
+              default: "09/28/2021"
               description: Cancellation effective date
             planDetails:
               type: array
@@ -456,15 +457,15 @@ definitions:
                     description: status of the policy
                   effectiveDate: 
                     type: string
-                    default: "01/17/2020"
+                    default: "09/27/2021"
                     description: effective date of the policy
                   expirationDate: 
                     type: string
-                    default: "01/17/2021"
+                    default: "09/28/2021"
                     description: expiration date of the policy
                   deductible: 
                     type: string
-                    default: "89"
+                    default: ""
                     description: deductible charged in case of IP Claims
                   serviceFee: 
                     type: string
@@ -476,7 +477,7 @@ definitions:
                     description: service fee to be charged in case of screen
                   policyNumber:
                     type: string
-                    default: "SC-HYL10000001"
+                    default: "SC-HYL10005017"
                     description: Policy number 
                   monthlyCost: 
                     type: string
@@ -484,69 +485,69 @@ definitions:
                     description: monthly cost of the policy
                   annualCost: 
                     type: string
-                    default: "10.8"
+                    default: "96.00"
                     description: annual cost of the policy
                   salesTax:
                     type: string
-                    default: "2.2"
+                    default: "0.00"
                     description: sales tax calculated from tax cloud
                   retailRate: 
                     type: string
-                    default: "0.5"
+                    default: "96.00"
                   baseRate: 
                     type: string
-                    default: "0.2"
+                    default: "76.80"
                   premium: 
                     type: string
-                    default: "2.2"
+                    default: "2.9400"
                   obligorFee: 
                     type: string
-                    default: "0.2"
+                    default: "0.00"
                   installmentPremium: 
                     type: string
-                    default: "0.5"
+                    default: "2.94"
                   installmentSalesTax: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentAdmin: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentCommission: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentFee: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentFinalPrice: 
                     type: string
-                    default: "0.5"
+                    default: "6.40"
                   installmentContingencyFee: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentObligorFee: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentRetailRate: 
                     type: string
-                    default: "0.5"
+                    default: "8.00"
                   installmentMultipleDeviceDiscount: 
                     type: string
-                    default: "0.5"
+                    default: "0.00"
                   installmentReserve: 
                     type: string
-                    default: "0.5"
+                    default: "2.94"
                   installmentSpecialCreditAmount: 
                     type: string
-                    default: "0.5"
+                    default: "1.60"
                   installmentCost: 
                     type: string
-                    default: "0.5"
+                    default: "8.00"
                   installmentBaseRate: 
                     type: string
-                    default: "0.5"
+                    default: "6.40"
                   installmentTax: 
                     type: string
-                    default: "0.5"                    
+                    default: "0.00"            
                   contingencyFee: 
                     type: string
                     default: "0.2"
