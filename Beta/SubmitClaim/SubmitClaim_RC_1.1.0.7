@@ -121,11 +121,11 @@ definitions:
             deviceId:
               title: "Device ID"
               type: string
-              default: "0001"
+              default: "2030577"
             deviceNickName:
               title: "Device Nickname"
               type: string
-              default: "Mary's Iphone"
+              default: "Iphone"
             loss:
               type: array
               title: "Loss"
@@ -134,7 +134,7 @@ definitions:
                   dateOfLoss:
                     title: "Date Of Loss"
                     type: string
-                    default: "01/30/2021"
+                    default: "08/24/2021"
                   claim:
                     title: "Claim"
                     type: array
@@ -206,7 +206,7 @@ definitions:
             default: "en"
       accountId:
             type: string
-            default: "0001"
+            default: "1021140"
       deviceInformation:
         type: array
         items:
@@ -214,15 +214,18 @@ definitions:
             deviceId:
               title: "deviceId"
               type: string
+              default: "2030577"
             deviceNickName:
               title: "deviceNickName"
               type: string
+              default: "iphone"
             loss:
               type: array
               items:
                 properties:
                   dateOfLoss:
                     type: string
+                    default: "08/24/2021"
                   claim:
                     type: array
                     items:
@@ -249,8 +252,10 @@ definitions:
                           type: string
                         deductibleAmount:
                           type: string
+                          default: "99.00"
                         serviceFee:
                           type: string
+                          default: "99.00"
                         screenCrackServiceFee:
                           type: string
                         communicationPreferences:
@@ -258,9 +263,11 @@ definitions:
                         additionalCommunicationEmail:
                           title: "Additional Communication Email"
                           type: string
+                          default: "bhavana_a@solartis.com"
                         additionalCommunicationPhone:
                           title: "Additional Communication Phone"
                           type: string
+                          default: "+91 8667724046"
                   
                        
   errorModel:
