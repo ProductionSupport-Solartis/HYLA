@@ -120,7 +120,7 @@ definitions:
               type: string
       effectiveDate:
         type: string
-        default: "03/05/2020"
+        default: "07/05/2021"
 
   GetAvailablePlans_Success_Response:
     type: object
