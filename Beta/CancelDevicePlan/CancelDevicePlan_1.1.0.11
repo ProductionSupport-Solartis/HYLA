@@ -121,7 +121,7 @@ definitions:
             deviceId:
               title: "deviceId"
               type: string
-              default: "654212121241121"
+              default: "2030577"
             deviceCancellationDate:
               title: "deviceCancellationDate"
               type: string
