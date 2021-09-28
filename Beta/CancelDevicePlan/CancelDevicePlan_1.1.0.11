@@ -125,7 +125,7 @@ definitions:
             deviceCancellationDate:
               title: "deviceCancellationDate"
               type: string
-              default: "04/02/2020"
+              default: "09/27/2021"
             cancelType:
               title: "cancelType"
               type: string
@@ -141,7 +141,7 @@ definitions:
             cancellationTime:
               title: "cancellationTime"
               type: string
-              default: "04/16/2020 13:08:00"
+              default: "09/28/2021 13:08:00"
      
   CancelDevicePlan_Success_Response:
     type: object
@@ -182,7 +182,7 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1000000"
+        default: "1021140"
       ResponseStatus:
         type: string
         default: "Success"
@@ -195,7 +195,7 @@ definitions:
             name:
               title: "name"
               type: string
-              default: "Invoice"
+              default: "Cancellation"
             URL:
               title: "URL"
               type: string
@@ -207,18 +207,19 @@ definitions:
                    deviceId:
                      title: "deviceId"
                      type: string
-                     default: "654212121241121"
+                     default: "2030577"
                    returnPremium:
                      title: "returnPremium"
                      type: string
-                     default: "8"
+                     default: "76.80"
                    installmentReturnPremium:
                      title: "installmentReturnPremium"
                      type: string
+                     default: "6.40"
                    deviceCancellationDate:
                      title: "planName"
                      type: string
-                     default: "02/05/2020"
+                     default: "09/28/2021"
                    cancelType:
                      title: "effectiveDate"
                      type: string
@@ -230,7 +231,7 @@ definitions:
                    cancellationTime:
                      title: "cancellationTime"
                      type: string
-                     default: "04/16/2020 13:08:00"
+                     default: "09/28/2021 07:08:00"
                    documents:
                        type: array
                        items:
