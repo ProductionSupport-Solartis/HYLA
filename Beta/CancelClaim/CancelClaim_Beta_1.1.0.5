@@ -109,7 +109,7 @@ definitions:
             default: "en"
       accountId:
         type: string
-        default: "1003381"
+        default: "1021140"
       deviceInformation:
         type: array
         items:
@@ -117,7 +117,7 @@ definitions:
             deviceId:
               title: "Device ID"
               type: string
-              default: "2004111"
+              default: "2030577"
             loss:
               type: array
               items:
@@ -179,7 +179,7 @@ definitions:
             default: "US"
       accountId:
          type: string
-         default: "0001"
+         default: "1021140"
       ResponseStatus:
         type: string
       documents:
@@ -200,6 +200,7 @@ definitions:
             deviceId:
               title: "deviceId"
               type: string
+              default: "2030577"
             loss:
               type: array
               items:
@@ -211,30 +212,39 @@ definitions:
                       claimId:
                         title: "claimId"
                         type: string
+                        default: "HYLACL-14428"
                       claimStatus:
                         title: "claimStatus"
                         type: string
+                        default: "Success"
                       claimState:
                         title: "claimState"
                         type: string
+                        default: "NE"
                       claimType:
                         title: "claimType"
                         type: string
+                        default: "Broken"
                       claimCreatedDate:
                         title: "claimCreatedDate"
                         type: string
+                        default: "09/27/2021"
                       deductibleAmount:
                         title: "deductibleAmount"
                         type: string
+                        default: "9.65"
                       cancellationDescription:
                         title: "cancellationDescription"
                         type: string
+                        default: "User denies to deactivate the device"
                       cancellationReason:
                         title: "cancellationReason"
                         type: string
+                        default: "User denies to deactivate the device"
                       claimCancelledDt:
                         title: "claimCancelledDt"
                         type: string
+                        default: ""09/27/2021 10:04:20"
                       settlementDetail:
                         type: object
                         properties:
