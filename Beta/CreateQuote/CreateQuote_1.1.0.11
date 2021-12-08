@@ -443,6 +443,9 @@ definitions:
                   insFee: 
                     type: string
                     default: "0.2"
+                  installmentInsFee:
+                    type: string
+                    default: "0.2"
                   commission: 
                     type: string
                     default: "0.2"
