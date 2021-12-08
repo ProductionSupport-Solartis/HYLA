@@ -449,7 +449,13 @@ definitions:
                   commission: 
                     type: string
                     default: "0.2"
+                  installmentCommission:
+                    type: string
+                    default: "0.2"
                   admin: 
+                    type: string
+                    default: "0.2"
+                  installmentAdmin:
                     type: string
                     default: "0.2"
                   RuleInformationList:
