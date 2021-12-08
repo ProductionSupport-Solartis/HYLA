@@ -498,8 +498,14 @@ definitions:
                   commission:
                     type: string
                     default: "0.4"
+                  installmentCommission:
+                    type: string
+                    default: "0.4"
                   admin:
                     type: string 
+                    default: "0.4"
+                  installmentAdmin:
+                    type: string
                     default: "0.4"
                   specialCreditType: 
                     type: string
