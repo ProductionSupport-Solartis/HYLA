@@ -252,6 +252,14 @@ definitions:
                             type: string
                           policyStatus:
                             type: string
+                          returnPremium:
+                            title: "returnPremium"
+                            type: string
+                            default: "76.80"
+                          installmentReturnPremium:
+                            title: "installmentReturnPremium"
+                            type: string
+                            default: "6.40"
         
            
   errorModel:
