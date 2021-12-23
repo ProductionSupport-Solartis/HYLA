@@ -1,0 +1,1030 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis GetAccountDetails API for HYLA
+  description: To get account details 
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: To get Account details for the given input
+      operationId: GetAccountDetails
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "GetAccountDetails_1.1.0.11"
+        - name: OwnerId
+          in: header
+          description: Owner ID of the Product
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: MODE of the product
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Environment in which the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: GetAccountDetails
+          in: body
+          description: Account Details
+          required: true
+          schema:
+            $ref: '#/definitions/GetAccountDetails_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/GetAccountDetails_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  GetAccountDetails_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+        type: string
+        default: "1021140"   
+
+
+  GetAccountDetails_Success_Response:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+      accountId:
+        type: string
+        default: "1021140"
+        description: unique id generated for each account
+      accountStatus:
+        type: string
+        default: "Active"
+        description: status of the account
+      firstName: 
+        type: string
+        default: "Sanjay"
+        description: first name of the insured
+      lastName: 
+        type: string
+        default: "Ramesh"
+        description: last name of the insured
+      email: 
+        type: string
+        default: "sanjayramesh8778@gmail.com"
+        description: email id of the insured
+      phone: 
+        type: string
+        default: "+91 8778156318"
+        description: phone number of the insured
+      communicationPreferences: 
+        type: string
+        default: "Email and Direct Mail"
+        description: communication preference opted by the insured
+      customerNickname: 
+        type: string
+        default: "AK"
+        description: nick name of the insured
+      address1: 
+        type: string
+        default: "860 PROVIDENCE HIGHWAY"
+        description: address line 1 of the insured
+      address2: 
+        type: string
+        default: ""
+        description: address line 2 of the insured
+      city: 
+        type: string
+        default: "DEDHAM"
+        description: city of the insured
+      state: 
+        type: string
+        default: "MA"
+        description: state of the insured
+      zipCode: 
+        type: string
+        default: "02026"
+        description: zipcode of the insured
+      programName: 
+        type: string
+        default: "Lori Device Protection"
+      programId: 
+        type: string
+        default: "123"
+      campaignId: 
+        type: string
+        default: "FallCampaign"
+      channel: 
+        type: string
+        default: "Direct"
+      medium: 
+        type: string
+        default: "Paid_Social"
+      partner: 
+        type: string
+        default: "HYLA"
+      partnerUserId: 
+        type: string
+        default: "123"
+      sourcePlatform: 
+        type: string
+        default: "Instagram"
+      referralCode:
+        type: string
+        default: "1255356"
+      ResponseStatus:
+        type: string
+        default: "SUCCESS"
+      timezone:
+        type: string
+        default: "EST"
+        description: timezone of the insured
+      createdTime:
+        type: string
+        description: account created time
+      paymentInformation:
+        type: object
+        properties:
+            cardType:
+              type: string
+              default: "Master"
+              description: insured's credit card type
+            tokenId:
+              type: string
+              default: "2aaecd01-76d2-45c6-b787-e53d24bf1111"  
+              description: token id generated from OneInc
+            lastFourDigits:
+              type: string 
+              description: last four digits of the card number
+            cardExpirationYear:
+              type: string
+              description: expiration date of the card
+            cardExpirationMonth:
+              type: string 
+              description: expiration month of the card
+            routingNumber:
+              type: string
+              description: routing number
+            paymentCategory:
+              type: string
+              description: payment category
+              default: "CreditCard" 
+            holderZip:
+              type: string
+              default: "85086" 
+              description: zip code of the card holder
+            holderAddress:
+              type: string
+              default: "Arizona" 
+              description: address of the card holder
+            customerName:
+              type: string
+              default: "Benzamin"
+              description: card holder name
+      documents:
+        type: array
+        items:
+         properties:
+           URL:
+              type: string
+           name:
+              type: string
+              default: "Invoice"
+      RuleInformationList:
+        type: array
+        items:
+         properties:
+           Message:
+              type: string
+           Status:
+              type: string
+      deviceInformation:
+        type: object
+        properties:
+            effectiveDate: 
+              type: string
+              default: "09/27/2021"
+              description: effective date of the policy
+            expirationDate: 
+              type: string
+              default: "09/28/2021"  
+              description: expiration date of the device
+            policyTerm:
+              type: string
+              default: "76.8000"
+              description: term of the policy
+            carrier: 
+              type: string
+              default: "US Cellular"
+              description: device carrier
+            model: 
+              type: string
+              default: "iPhone 11"
+              description: device model
+            make:
+              type: string
+              default: "Apple"
+              description: device make
+            color: 
+              type: string
+              default: "White"
+              description: device color
+            capacity: 
+              type: string
+              default: "64GB"
+              description: device capacity
+            policyNumber:
+              type: string
+              default: "POL-143710"
+              description: device policy number
+            planName: 
+              type: string
+              default: "F"
+              description: plan name of the policy
+            term: 
+              type: string
+              default: "12 months"
+              description: policy term
+            diagnosticComplete:
+              type: string
+              default: "Yes"
+            diagnosticPassed:
+              type: string
+              default: "Yes"
+            cancelType:
+              type: string
+              default: "Prorata"
+              description: type of cancellation
+            cancelReason:
+              type: string
+              description: reason for cancellation
+            imei: 
+              type: string
+              default: "329498988990521"
+              description: imei number of the device
+            annualCost: 
+              type: string
+              default: "12.6"
+              description: annual cost of the policy
+            tier: 
+              type: string
+              default: "6"
+              description: tier of the device
+            quoteNumber: 
+              type: string
+              default: "BAT-236156"
+              description: quote number of the policy
+            deviceNickName: 
+              type: string
+              default: "iPhone"
+              description: device nick name
+            devicePhoneNumber:
+              type: string
+              default: "+91 8778156318"
+              description: device phone number
+            billingTermCost:
+              type: string
+              default: "14"
+              description: Cost to be charged for the current billing term
+            monthlyCost: 
+              type: string
+              default: "6.40"
+              description: monthly cost of the policy
+            userAgreedToCoverage: 
+              type: string
+              default: "Yes"
+            signature: 
+              type: string
+              default: "Sign.PNG"
+              description: signature of the insured
+            signatureTimestamp: 
+              type: string
+              default: "09/27/2021 03:14:07"
+              description: signature time stamp
+            returnPremium: 
+              type: string
+              default: "8"
+              description: premium returned to the user in case of cancellation
+            prorataFactor:
+              type: string
+              default: "1"
+              description: Prorata factor
+            devicePremium: 
+              type: string
+              default: "6.4000"
+              description: device permium
+            totalDiscounts: 
+              type: string
+              default: "0.00"
+              description: sum of applicable discounts
+            installmentDevicePremium: 
+              type: string
+              default: "6.4000"
+            installmentCount: 
+              type: string
+              default: "12"
+            installmentDiscount: 
+              type: string
+              default: "0.00"
+            installmentCost: 
+              type: string
+              default: "8.00"
+            maximumClaimLimit: 
+              type: string
+              default: "1000"     
+              description: maximum limit applicable per covered claim  
+            initialPremium:
+              type: string
+              default: "6.40"
+            productId:
+              type: string
+              default: "1665022"
+              description: product id of each device
+            deviceId:
+              type: string
+              default: "2030577"
+              description: unique id generated for each device
+            deviceCancellationDate:
+              type: string
+              default: "09/28/2021"
+              description: Cancellation effective date
+            planDetails:
+              type: array
+              items:
+                properties:
+                  documents:
+                    type: array
+                    items:
+                      properties:
+                        URL: 
+                          type: string
+                        name: 
+                          type: string
+                          default: "SCEndorsement"
+                  type: 
+                    type: string
+                    default: "ServiceContract"
+                  policyStatus:
+                    type: string
+                    description: status of the policy
+                  effectiveDate: 
+                    type: string
+                    default: "09/27/2021"
+                    description: effective date of the policy
+                  expirationDate: 
+                    type: string
+                    default: "09/28/2021"
+                    description: expiration date of the policy
+                  deductible: 
+                    type: string
+                    default: ""
+                    description: deductible charged in case of IP Claims
+                  serviceFee: 
+                    type: string
+                    default: "99"
+                    description: service fee charged in case of SC Claims
+                  screenCrackServiceFee: 
+                    type: string
+                    default: "49"
+                    description: service fee to be charged in case of screen
+                  policyNumber:
+                    type: string
+                    default: "SC-HYL10005017"
+                    description: Policy number 
+                  monthlyCost: 
+                    type: string
+                    default: "12"
+                    description: monthly cost of the policy
+                  annualCost: 
+                    type: string
+                    default: "96.00"
+                    description: annual cost of the policy
+                  salesTax:
+                    type: string
+                    default: "0.00"
+                    description: sales tax calculated from tax cloud
+                  retailRate: 
+                    type: string
+                    default: "96.00"
+                  baseRate: 
+                    type: string
+                    default: "76.80"
+                  premium: 
+                    type: string
+                    default: "2.9400"
+                  obligorFee: 
+                    type: string
+                    default: "0.00"
+                  installmentPremium: 
+                    type: string
+                    default: "2.94"
+                  installmentSalesTax: 
+                    type: string
+                    default: "0.00"
+                  installmentAdmin: 
+                    type: string
+                    default: "0.00"
+                  installmentCommission: 
+                    type: string
+                    default: "0.00"
+                  installmentFee: 
+                    type: string
+                    default: "0.00"
+                  installmentFinalPrice: 
+                    type: string
+                    default: "6.40"
+                  installmentContingencyFee: 
+                    type: string
+                    default: "0.00"
+                  installmentObligorFee: 
+                    type: string
+                    default: "0.00"
+                  installmentRetailRate: 
+                    type: string
+                    default: "8.00"
+                  installmentMultipleDeviceDiscount: 
+                    type: string
+                    default: "0.00"
+                  installmentReserve: 
+                    type: string
+                    default: "2.94"
+                  installmentSpecialCreditAmount: 
+                    type: string
+                    default: "1.60"
+                  installmentCost: 
+                    type: string
+                    default: "8.00"
+                  installmentBaseRate: 
+                    type: string
+                    default: "6.40"
+                  installmentTax: 
+                    type: string
+                    default: "0.00"            
+                  contingencyFee: 
+                    type: string
+                    default: "0.2"
+                  hylaFee: 
+                    type: string
+                    default: "0.2"
+                  tax: 
+                    type: string
+                    default: "0.2"
+                  fee: 
+                    type: string
+                    default: "0.2"
+                  reserve: 
+                    type: string
+                    default: "0.2"
+                  insFee: 
+                    type: string
+                    default: "0.2"
+                  installmentInsFee:
+                    type: string
+                    default: "0.2"
+                  commission: 
+                    type: string
+                    default: "0.2"
+                  admin: 
+                    type: string
+                    default: "0.2"
+                  specialCreditType: 
+                    type: string
+                  specialCreditValue: 
+                    type: string
+                  specialCreditAmount: 
+                    type: string
+                  finalPrice:
+                    type: string
+                  multipleDeviceDiscount: 
+                    type: string
+                  annualDiscount: 
+                    type: string
+                  claimFreeDiscount: 
+                    type: string
+                  coverages:
+                    type: array
+                    items:
+                      properties:
+                        name: 
+                          type: string
+                          default: "Accidental_Damage"    
+            loss:
+              type: array
+              items:
+                properties:   
+                  dateOfLoss:
+                      type: string
+                      default: "01/09/2020"    
+                  claim:
+                    type: array
+                    items:
+                      properties:
+                         claimReasons:
+                          type: string
+                          default: "WATER_DAMAGE"
+                          description: claim reason provided during claim submission
+                         claimCause:
+                          type: string
+                          default: "I dropped my phone in water"
+                          description: Cause of the claim 
+                         claimId:
+                          type: string
+                          default: "HYLACL0001"
+                          description: unique id generated for each claim
+                         claimStatus:
+                          type: string
+                          default: "CLOSED"
+                          description: status of the claim
+                         claimState:
+                          type: string
+                          default: "CLAIM_CLOSED" 
+                          description: state of the claim
+                         claimType:
+                          type: string
+                          default: "ADVANCED_EXCHANGE"
+                          description: type of the claim
+                         claimCreatedDt:
+                          type: string
+                          default: "02/01/2020" 
+                          description: claim created date
+                         claimDenialCode:
+                          type: string
+                          description: Claim denial Code
+                         claimDenialReason:
+                          type: string
+                          description: Claim denial reason
+                         canBeCancelled:
+                          type: string
+                          default: "No"
+                          description: key to determine whether the claim can or cannot be cancelled
+                         deductibleAmount:
+                          type: string
+                          default: "259"
+                          description: deductible amount to be charged during filing claim
+                         preferredDate:
+                          type: string
+                          description: preferred date of concierge 
+                         cancellationDescription:
+                          type: string
+                          description: claim cancel description
+                         cancellationReason:
+                          type: string
+                          description: claim cancel reason
+                         repairVendor:
+                          type: array
+                          items:
+                             properties:
+                               repairVendorName:
+                                 type: string
+                                 description: repair vendor name
+                               repairCost:
+                                 type: string
+                                 description: repair cost 
+                               technicianEnrouteDateTime:
+                                 type: string
+                                 description: technician enrouted date and time
+                               scheduledWindowStart:
+                                 type: string
+                                 description: repair scheduled window start date 
+                               scheduledWindowEnd:
+                                 type: string
+                                 description: repair scheduled window end date
+                               rescheduleWindowStart:
+                                 type: string
+                                 description: repair rescheduled window start date 
+                               rescheduleWindowEnd:
+                                 type: string
+                                 description: repair rescheduled window end date
+                               rescheduleRemaining:
+                                 type: string
+                                 description: number of reschedules remaining
+                               serviceRequestId:
+                                 type: string
+                                 description: service request id 
+                               serviceRequestCoordinate:
+                                 type: string
+                                 description: service request coordinate
+                               actualRepairWindowStart:
+                                 type: string
+                                 description: actual repair window start date
+                               actualRepairWindowEnd:
+                                 type: string
+                                 description: actual repair window end date
+                               repairTicketId:
+                                 type: string
+                                 description: repair ticket id
+                               repairLocationId:
+                                 type: string
+                                 description: repair location id
+                               address1:
+                                 type: string
+                                 description: repair location address line 1
+                               address2:
+                                 type: string
+                                 description: repair location address line 2
+                               city:
+                                 type: string
+                                 description: repair location city
+                               state:
+                                 type: string
+                                 description: repair location state
+                               zipCode:
+                                 type: string
+                                 description: repair location zip code
+                               dropOffWindowStartDate:
+                                 type: string
+                                 description: drop off window start date
+                               dropOffWindowEndDate:
+                                 type: string
+                                 description: drop off window end date
+                          
+                         settlementDetail:
+                          type: object
+                          properties:
+                               paymentStatus:
+                                 type: string
+                                 default: "Success"
+                                 description: payment status
+                               paymentID:
+                                 type: string
+                                 default: "234"
+                                 description: payment id
+                               refundTransactionId:
+                                 type: string
+                                 description: refund transcation id
+                               replacementDeviceInfo:
+                                 type: object
+                                 properties:
+                                   manufacturer:
+                                      type: string
+                                      default: "Apple"
+                                      description: replacement device manufacturer
+                                   imeiShipped:
+                                      type: string
+                                      default: "990000862471854"
+                                      description: replacement device imei
+                                   modelName:
+                                      type: string
+                                      default: "iPhone 7"
+                                      description: replacement device model 
+                                   deviceCost:
+                                      type: string
+                                      default: "169.9"
+                                      description: replacement device cost
+                                   capacity:
+                                      type: string
+                                      default: "128GB"
+                                      description: replacement device capacity
+                                   carrier:          
+                                      type: string
+                                      description: replacement device carrier
+                                   color:
+                                      type: string
+                                      default: "Black"
+                                      description: replacement device color
+                                   hylaProductId:
+                                      type: string
+                                      default: "1334613"
+                                      description: replacement device product id
+                                   internalModelNumber:
+                                      type: string
+                                      default: "IPHONE9,3"
+                                      description: replacement device internal model number
+                                   replacementDeviceShipmentInfo:
+                                      type: object
+                                      properties:
+                                        carrier:
+                                           type: string
+                                           default: "Verizon"
+                                           description: replacement device shipping carrier
+                                        shippingTrackingNumber:
+                                           type: string
+                                           default: "6201"
+                                           description: replacement device shipping tracking number
+                                        deviceShippedDate:
+                                           type: string
+                                           default: "02/06/2020"
+                                           description: replacement device shipped date
+                                        deviceArrivedDateTime:
+                                           type: string
+                                           default: "02/08/2020"
+                                           description: replacement device arrived date
+                                        shipmentMethod:
+                                           type: string
+                                           default: "Courier"
+                                           description: replacement device shipment method
+                                        forwardLogisticsCost:
+                                           type: string
+                                           default: "15"
+                                           description: shipment forward logistics cost
+                                        tapCenterProcessingCost:          
+                                           type: string
+                                           default: "2"
+                                           description: shipment tap center processing cost
+                                        packagingCost:          
+                                           type: string
+                                           default: "2"
+                                           description: shipment packaging cost
+                                   rmaDeviceInfo:
+                                      type: object
+                                      properties:
+                                        manufacturer:
+                                           type: string
+                                           default: "Apple"
+                                           description: rma device manufacturer
+                                        imeiShipped:
+                                           type: string
+                                           default: "990000862471856"
+                                           description: rma device imei
+                                        modelName:
+                                           type: string
+                                           default: "iPhone 7"
+                                           description: rma device model name
+                                        deviceCost:
+                                           type: string
+                                           default: "500"
+                                           description: rma device cost
+                                        correctDeviceReceived:
+                                           type: string
+                                           default: "Yes"
+                                           description: key to check whether correct device is being returned
+                                        capacity:
+                                           type: string
+                                           default: "128GB"
+                                           description: rma device capacity
+                                        color:          
+                                           type: string
+                                           default: "Blue"
+                                           description: rma device color
+                                        carrier:          
+                                           type: string
+                                           description: rma device carrier
+                                        saleOfReturnedDevice:          
+                                           type: string
+                                           default: "250"
+                                           description: sale cost of the returned device
+                                        hylaProductId:          
+                                           type: string
+                                           default: "1334613"
+                                           description: rma device product id
+                                        internalModelNumber:
+                                           type: string
+                                           default: "IPHONE9,3"
+                                           description: rma device internal model number
+                                        rmaDeviceShipmentInfo:
+                                           type: object
+                                           properties:
+                                             carrier:
+                                               type: string
+                                               default: "Verizon"
+                                               description: rma device shipping carrier
+                                             shippingTrackingNumber:
+                                               type: string
+                                               description: rma device shipping tracking number
+                                               default: "1265"  
+                                             deviceShippedDate:
+                                               type: string
+                                               default: "02/10/2020"
+                                               description: rma device shipped date
+                                             deviceArrivedDateTime:
+                                               type: string
+                                               default: "02/12/2020"
+                                               description: rma device arrived date
+                                             shipmentMethod:  
+                                               type: string
+                                               default: "Courier"
+                                               description: rma device shipment method
+                                             reverseLogisticsCost:
+                                               type: string
+                                               default: "3"
+                                               description: reverse logistics cost for shipping
+                                             tapCenterTriageProcessCost:
+                                               type: string
+                                               default: "5"
+                                               description: tap center triage processing cost
+                                        totalClaimCost:
+                                           type: string
+                                           default: "229"
+                                           description: total claim cost
+                                        incorrectDeviceInfo:
+                                           type: object
+                                           properties:
+                                             incorrectDeviceShipmentInfo:
+                                               type: object
+                                               properties:
+                                                  carrier: 
+                                                    type: string
+                                                    description: incorrect device shipping carrier
+                                                  shippingTrackingNumber:
+                                                    type: string
+                                                    description: incorrect device shipping tracking number
+                                                  deviceShippedDate:
+                                                    type: string
+                                                    description: incorrect device shipped date
+                                                  deviceArrivedDateTime:
+                                                    type: string
+                                                    description: incorrect device arrived date
+                                                  shipmentMethod:  
+                                                    type: string
+                                                    description: incorrect device shipment method
+                                                  incorrectLogisticsCost:  
+                                                    type: string
+                                                    description: incorrect logistics cost
+                                             refundTransactionStatus:
+                                                type: string
+                                                description: refund transaction status
+                                            
+                         claimPendingCode:
+                            type: string
+                            description: claim pending code
+                         claimPendingReason:
+                            type: string
+                            description: claim pending reason
+                         deactivateDevice:
+                            type: string
+                            description: key to determine whether the lost device can be deactivated
+                         updatedPolicyLimit:
+                            type: string
+                            default: "1000"
+                            description: updated policy limit
+                         repairRescheduleLimit:
+                            type: string
+                            description: limit for rescheduling repairs
+                         canBeRescheduled:
+                            type: string
+                            description: key to determine whether the repair can be rescheduled
+                         additionalCommunicationEmail:
+                            type: string
+                            default: "jack@gmail.com"
+                            description: additional communication preference for claims
+                         additionalCommunicationPhone:
+                            type: string
+                            default: "(555) 555-1234"
+                            description: additional communication preference for claims
+                         city:
+                            type: string
+                            default: "Illinois"
+                            description: insured's city
+                         county:
+                            type: string
+                            default: "Hardin"
+                            description: insured's county
+                         address1:
+                            type: string
+                            default: "5300 Katrine Ave"
+                            description: insured's address line 1
+                         address2:
+                            type: string
+                            default: "Downers Grove"
+                            description: insured's address line 2
+                         zipCode:
+                            type: string
+                            default: "60515"
+                            description: insured's zip code
+                         stateRegion:   
+                            type: string
+                            default: "IL"
+                            description: insured's state
+                         addressType:
+                            type: string
+                            default: "Shipping"
+                            description: adress type for the claim
+                         repairOption:
+                            type: string
+                            description: repair option opted for the claim
+                         communicationPreferences:   
+                            type: string
+                            default: "Email and SMS"
+                            description: communication preferences selected for claim related communications
+                         manualReview:
+                          type: array
+                          items:
+                             properties:
+                               code:
+                                 type: string
+                                 description: manual review code
+                               reason:
+                                 type: string
+                                 description: manual review reason
+                            
+ 
+  
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
