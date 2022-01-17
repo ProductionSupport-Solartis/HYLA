@@ -113,7 +113,7 @@ definitions:
         default: "AL"
       partner:
         type: string
-        default: "HYLA"
+        default: "ACSC"
       tierDetail:
         type: array
         items:
