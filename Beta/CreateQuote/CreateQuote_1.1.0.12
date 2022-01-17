@@ -216,6 +216,9 @@ definitions:
       accountId:
         type: string
         default: "1021140"
+      partner:
+        type: string
+        default: "HYLA"
       ResponseStatus:
         type: string
       deviceInformation:
@@ -224,9 +227,6 @@ definitions:
             deviceId:
               type: string
               default: "2030577"
-            partner:
-              type: string
-              default: "HYLA"
             deviceNickName: 
               type: string
               default: "Whitey"
