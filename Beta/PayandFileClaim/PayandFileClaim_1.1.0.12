@@ -1,0 +1,384 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis PayAndFileClaim API for HYLA
+  description: To Pay and File Claim for the Device
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: Get Claim for the given input
+      operationId: getClaim
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "PayAndFileClaim_1.1.0.12"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: PayAndFileClaim
+          in: body
+          description: Plan Details
+          required: true
+          schema:
+            $ref: '#/definitions/PayAndFileClaim_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/PayAndFileClaim_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  PayAndFileClaim_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+            type: string
+            default: "0001"
+      deviceInformation:
+        title: "Device Information"
+        type: array
+        items:
+          properties:
+            deviceId:
+              title: "Device ID"
+              type: string
+              default: "2030577"
+            loss:
+              type: array
+              items:
+                properties:
+                  claim:
+                    type: array
+                    items:
+                      properties:
+                        claimId:
+                          title: "Claim ID"
+                          type: string
+                          default: "HYLACL-14428"
+                        preferredDate:
+                          type: string
+                          default: "09/29/2021 02:18:15"
+                        claimStatus:
+                          type: string
+                        addressType:
+                          title: "Address Type"
+                          type: string
+                          enum: ["Repair", "Shipping","Reimbursement"]
+                          default: "Shipping"
+                        repairOption:
+                          title: "Reapir Option"
+                          type: string
+                          enum: ["Concierge", "Drop_Off"]
+                          default: "Drop_Off"
+                        address1:
+                          title: "Address 1"
+                          type: string
+                          default: "1006  Drummond Street"
+                        address2:
+                          title: "Address 2"
+                          type: string
+                        city:
+                          title: "City"
+                          type: string
+                          default: "Newark"
+                        county:
+                          title: "County"
+                          type: string
+                        state:
+                          title: "State"
+                          type: string
+                          default: "NJ"
+                        zipCode:
+                          title: "Zip Code"
+                          type: string
+                          default: "07103"
+                        signature:
+                          title: "Signature"
+                          type: string
+                        signatureTimestamp:
+                          title: "Signature Time Stamp"
+                          type: string
+                        payWithExistingCard:
+                          title: "Pay With Existing Card"
+                          type: string
+                          enum: ["Yes", "No"]
+                        deactivateDevice:
+                          title: "Deactivate Device"
+                          type: string
+                          enum: ["Yes", "No"]
+                        settlementDetail:
+                          title: "Settlement Detail"
+                          type: object
+                          properties:
+                              paymentToken:
+                                type: string
+                                default: "044dd2a9-bbc0-45e9-9a98-189f18ce1111"
+                              transactionDate:
+                                type: string
+                                default: "07/29/2021 11:11:11"
+                        repairVendor:
+                          title: "Repair Vendor"
+                          type: array
+                          items:
+                           properties:
+                              dropOffWindowStartDate:
+                                type: string
+                                default: ""
+                              repairLocationId:
+                                type: string
+                                default: ""
+                              
+                        
+
+  PayAndFileClaim_Success_Response:
+  
+    type: object
+    required:
+      - ServiceRequestDetail
+      - deviceInformation
+    properties:
+      Tier:
+        type: string
+      EffectiveDate:
+        type: string
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaagent"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+         type: string
+         default: "1021140"
+      ResponseStatus:
+         type: string
+      responseCode:
+        type: string
+      authorizationCode:
+        type: string 
+      documents:
+         type: array
+         items:
+           properties: 
+             name:
+               title: "name"
+               type: string
+             URL:
+               title: "URL"
+               type: string 
+         
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            deviceId:
+              title: "deviceId"
+              type: string
+            loss:
+              type: array
+              items:
+                properties:
+                  claim:
+                    type: array
+                    items:
+                      properties:
+                        claimId:
+                          type: string
+                        claimStatus:
+                          type: string
+                        claimState:
+                          type: string
+                        preferredDate:
+                          type: string
+                        claimType:
+                          type: string
+                        addressType:
+                          type: string
+                          enum: ["Repair", "Shipping","Reimbursement"]
+                        repairOption:
+                          type: string
+                        address1:
+                          type: string
+                        address2:
+                          type: string
+                        city:
+                          type: string
+                        county:
+                          type: string
+                        state:
+                          type: string
+                        zipCode:
+                          type: string
+                        holiClaimApproved:
+                          type: string
+                        manualReview:
+                         type: array
+                         items:
+                           properties:
+                             code:
+                              type: string
+                             reason:
+                              type: string
+                              
+                        settlementDetail:
+                          type: object
+                          properties:
+                            paymentStatus:
+                              type: string
+                            transactionDate:
+                              type: string
+                        payWithExistingCard:
+                          type: string
+                        claimPendingCode:
+                          type: string
+                        claimPendingReason:
+                          type: string
+                        deactivateDevice:
+                          type: string
+                        repairVendor:
+                          title: "Repair Vendor"
+                          type: array
+                          items:
+                           properties:
+                              dropOffWindowStartDate:
+                                type: string
+                                default: ""
+                              dropOffWindowEndDate:
+                                type: string
+                                default: ""
+                              repairLocationId:
+                                type: string
+                                default: ""
+  
+                          
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
