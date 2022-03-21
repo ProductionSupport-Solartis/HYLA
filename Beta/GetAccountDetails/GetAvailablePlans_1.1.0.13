@@ -652,6 +652,9 @@ definitions:
                          claimCreatedDt:
                           type: string
                           default: "02/01/2020" 
+                         claimCancelledDt:
+                          type: string
+                          default: "02/01/2021" 
                           description: claim created date
                          claimDenialCode:
                           type: string
