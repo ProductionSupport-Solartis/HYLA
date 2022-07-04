@@ -119,8 +119,17 @@ definitions:
           properties:
             deviceId:
               type: string
-            installmentDueDate:
+            totalMissedPayment:
               type: string
+            missedPayments:
+              type: array
+              items:
+               properties:
+                 installmentDueDate:
+                   type: string
+                 installmentDevicePremium:
+                   type: string
+            
               
   PayMissedMonthlyPayment_Success_Response:
     type: object
@@ -189,10 +198,16 @@ definitions:
                 type: string
             deviceId:
               type: string
-            installmentDevicePremium:
+            totalMissedPayment:
               type: string
-            installmentDueDate:
-              type: string
+            missedPayments:
+              type: array
+              items:
+               properties:
+                 installmentDueDate:
+                   type: string
+                 installmentDevicePremium:
+                   type: string
            
   errorModel:
     type: object
