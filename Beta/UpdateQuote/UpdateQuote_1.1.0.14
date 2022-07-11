@@ -1,0 +1,581 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Solartis UpdateQuote API for HYLA
+  description: To update the Quote based on the updated Information
+  
+  
+host: hylakb.uat.solartis.net
+basePath: /KnowledgeEngineV6_6/KnowledgeBase
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /FireEventV3:
+    post:
+      description: To update the Quote based on the updated Information
+      operationId: updateQuote
+      produces:
+        - application/json
+      parameters:
+        - name: Token
+          in: header
+          description: Authentication Token
+          required: true
+          type: string
+          format: string
+          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+        - name: EventName
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "UpdateQuote_1.1.0.14"
+        - name: OwnerId
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "2282"
+        - name: MODE
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "LIVE"
+        - name: Environment
+          in: header
+          description: Name of the event to be invoked
+          required: true
+          type: string
+          format: string
+          default: "15"
+        - name: UpdateQuote
+          in: body
+          description: Update Quote
+          required: true
+          schema:
+            $ref: '#/definitions/UpdateQuote_Request'
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            $ref: '#/definitions/UpdateQuote_Success_Response'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+
+definitions:
+  UpdateQuote_Request:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - accountId
+      - deviceInformation
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          OwnerId:
+            type: string
+            default: "2282"
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+        type: string
+        default: "1021140"
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            deviceId:
+              title: "deviceId"
+              type: string
+              default: "2030577"
+            deviceNickName: 
+              type: string
+              default: "iPhone"
+            devicePhoneNumber: 
+              type: string
+              default: "+91 8778156318"
+            make: 
+              type: string
+              default: "Apple"
+            model: 
+              type: string
+              default: "iPhone 11"
+            color: 
+              type: string
+              default: "Silver"
+            capacity: 
+              type: string
+              default: "64GB"
+            carrier: 
+              type: string
+              default: "US Cellular"
+            productId:
+              title: "productId"
+              type: string
+              default: "1665022"
+            userAgreedToCoverage: 
+              type: string
+              default: "Yes"
+              enum: ["Yes", "No"]
+            signature:
+              type: string
+              default: "sign.PNG"
+            signatureTimestamp:
+              type: string
+              default: "09/27/2021 12:50:17"
+            quoteNumber:
+              title: "quoteNumber"
+              type: string
+              default: "BAT-290368"
+            diagnosticComplete:
+              title: "diagnosticComplete"
+              type: string
+              default: "Yes"
+              enum: ["Yes", "No"]
+            diagnosticPassed:
+              title: "diagnosticPassed"
+              type: string
+              default: "Yes"
+              enum: ["Yes", "No"]
+            effectiveDate:
+              title: "effectiveDate"
+              type: string
+              default: "09/27/2021"
+            action:
+              title: "action"
+              type: string
+              default: "Modified"
+            imei: 
+              type: string
+              default: "329498988990521"
+            lockedTime: 
+              type: string
+              
+  UpdateQuote_Success_Response:
+    type: object
+    required:
+      - ServiceRequestDetail
+      - accountId
+      - deviceInformation
+    properties:
+      ServiceRequestDetail:
+        type: object
+        properties:
+          ResponseType:
+            type: string
+            enum: ["JSON","XML"]
+            default: "JSON"
+          OwnerId:
+            type: string
+            default: "2282"
+          EndClientUserUniqueSessionId:
+            type: string
+            default: "1.0"
+          UserName:
+            type: string
+            default: "hylaadmin"
+          Token:
+            type: string
+            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          ServiceRequestVersion:
+            type: string
+            default: "1.0"
+          ServiceResponseVersion:
+            type: string
+            default: "1.0"
+          RegionCode:
+            type: string
+            default: "US"
+          LanguageCode:
+            type: string
+            default: "en"
+      accountId:
+        type: string
+        default: "1021140"
+      partner:
+        type: string
+        default: "HYLA"
+      ResponseStatus:
+        type: string
+      deviceInformation:
+        type: array
+        items:
+          properties:
+            deviceId:
+              title: "deviceId"
+              type: string
+              default: "2030577"
+            productId:
+              title: "productId"
+              type: string
+            deviceNickName:
+              title: "deviceNickName"
+              type: string
+              default: "iPhone"
+            devicePhoneNumber:
+              title: "devicePhoneNumber"
+              type: string
+              default: "+91 8778156318"
+            make:
+              title: "make"
+              type: string
+              default: "Apple"
+            model:
+              title: "model"
+              type: string
+              default: "iPhone 11"
+            color:
+              title: "color"
+              type: string
+              default: "Silver"
+            capacity:
+              title: "capacity"
+              type: string
+              default: "64GB"
+            carrier:
+              title: "carrier"
+              type: string
+              default: "US Cellular"
+            tier:
+              title: "tier"
+              type: string
+              default: "5"
+            planName:
+              title: "planName"
+              type: string
+              default: "F"
+            effectiveDate:
+              title: "effectiveDate"
+              type: string
+              default: "09/27/2021"
+            expirationDate:
+              title: "expirationDate"
+              type: string
+              default: "09/27/2022"
+            billingTermCost:
+              title: "billingTermCost"
+              type: string
+              default: "6.40"
+            monthlyCost:
+              title: "monthlyCost"
+              type: string
+              default: "8.00"
+            annualCost:
+              title: "annualCost"
+              type: string
+              default: "96.00"
+            reducedAnnualCost:
+              type: string
+              default: "99.00"
+            reducedMonthlyCost:
+              type: string
+              default: "9.00"
+            billingTerm:
+              title: "billingTerm"
+              type: string
+              default: "Monthly"
+              enum: ["Monthly", "Annual"]
+            quoteNumber:
+              title: "quoteNumber"
+              type: string
+              default: "BAT-290368"
+            surveySent:
+              title: "surveySent"
+              type: string
+              default: "Yes"
+            userAgreedToCoverage:
+              title: "userAgreedToCoverage"
+              type: string
+              default: "Yes"
+            term:
+              title: "term"
+              type: string 
+              default: "12 months"
+            devicePremium:
+              title: "devicePremium"
+              type: string 
+              default: "76.80"
+            totalDiscounts:  
+              title: "totalDiscounts"
+              type: string 
+              default: "0.00"
+            maximumClaimLimit:
+              title: "maximumClaimLimit"
+              type: string 
+              default: "1000"
+            initialPremium:
+              title: "initialPremium"
+              type: string 
+              default: "0"
+            installmentDevicePremium:
+              title: "installmentDevicePremium"
+              type: string
+              default: "6.40"
+            installmentCount:
+              title: "installmentCount"
+              type: string
+              default: "12"
+            installmentDiscount:
+              title: "installmentDiscount"
+              type: string
+              default: "0.00"
+            installmentCost:
+              title: "installmentCost"
+              type: string
+              default: "8.00"
+            prorataFactor:  
+              title: "prorataFactor"
+              type: string 
+              default: "1.0000"
+            diagnosticComplete:
+              title: "diagnosticComplete"
+              type: string 
+              default: "Yes"
+            diagnosticPassed:
+              title: "diagnosticPassed"
+              type: string 
+              default: "Yes"
+            policyTerm:
+              type: string
+            action:
+              title: "action"
+              type: string 
+              default: "Modified"
+            imei: 
+              type: string
+              default: "521092055130671"
+            signature:
+              type: string
+              default: "sign.PNG"
+            signatureTimestamp:
+              type: string
+              default: "03/30/2020 10:01:00"
+            lockedTime: 
+              type: string              
+            planDetails:
+              type: array
+              items:
+                properties:
+                  effectiveDate:
+                    type: string
+                    default: "09/27/2021"
+                  expirationDate:
+                    type: string
+                    default: "09/27/2022"
+                  type:
+                    type: string
+                    default: "Extended Service Contract"
+                  deductible:
+                    type: string
+                    default: "89"
+                  serviceFee:
+                    type: string
+                    default: "99"
+                  installmentClaimFreeDiscount:
+                    type: string
+                    default: "0.00"
+                  installmentSalesTax:
+                    type: string
+                    default: "0.00"
+                  installmentFee:
+                    type: string
+                    default: "0.00"
+                  installmentFinalPrice:
+                    type: string
+                    default: "6.40"
+                  installmentContingencyFee:
+                    type: string
+                    default: "0.00"
+                  installmentObligorFee:
+                    type: string
+                    default: "0.00"
+                  installmentRetailRate:
+                    type: string
+                    default: "8.00"
+                  installmentReserve:
+                    type: string
+                    default: "3.68"
+                  installmentSpecialCreditAmount:
+                    type: string
+                    default: "1.60"
+                  installmentBaseRate:
+                    type: string 
+                    default: "8.00"
+                  installmentTax:
+                    type: string 
+                    default: "0.00"
+                  installmentHylaFee:
+                    type: string 
+                    default: "4.32"
+                  installmentPremium:
+                    type: string
+                    default: "3.68"
+                  installmentMultipleDeviceDiscount:
+                    type: string 
+                    default: "0.00"
+                  installmentCost:
+                    type: string
+                    default: "8.00"
+                  screenCrackServiceFee:
+                    type: string
+                    default: "49.00"
+                  monthlyCost:
+                    type: string
+                    default: "8.00"
+                  annualCost:
+                    type: string
+                    default: "96.00"
+                  affiliatePartnerDiscountAmount:
+                    type: string
+                    default: "99.00"
+                  installmentAffiliatePartnerDiscountAmount:
+                    type: string
+                    default: "99.00"
+                  affiliatePartnerDiscountPercentage:
+                    type: string
+                    default: "50.00"
+                  retailRate: 
+                    type: string
+                    default: "96.00"
+                  baseRate:  
+                    type: string
+                    default: "96.00"
+                  premium:
+                    type: string
+                    default: "44.16"
+                  obligorFee:
+                    type: string
+                    default: "0.00"
+                  contingencyFee: 
+                    type: string
+                    default: "0.00"
+                  multipleDeviceDiscount: 
+                    type: string
+                    default: "0.00"
+                  annualDiscount: 
+                    type: string
+                    default: "0.00"
+                  claimFreeDiscount: 
+                    type: string
+                    default: "0.00"
+                  hylaFee:  
+                    type: string
+                    default: "51.84"
+                  tax:
+                    type: string
+                    default: "0.00"
+                  fee:
+                    type: string
+                    default: "4.32"
+                  reserve:
+                    type: string
+                    default: "3.68"
+                  salesTax:
+                    type: string
+                    default: "0.00"
+                  insFee:
+                    type: string
+                    default: "0.3"
+                  installmentInsFee:
+                    type: string
+                    default: "0.3"
+                  commission:
+                    type: string
+                    default: "0.4"
+                  installmentCommission:
+                    type: string
+                    default: "0.4"
+                  admin:
+                    type: string 
+                    default: "0.4"
+                  installmentAdmin:
+                    type: string
+                    default: "0.4"
+                  specialCreditType: 
+                    type: string
+                  specialCreditValue: 
+                    type: string
+                  specialCreditAmount: 
+                    type: string
+                  finalPrice:
+                    type: string
+                  RuleInformationList:
+                    type: array
+                    items:
+                      properties:
+                        Message: 
+                          type: string
+                        Status: 
+                          type: string
+                        ErrorCode: 
+                          type: string
+                  coverages:
+                    type: array
+                    items:
+                      properties:
+                        name:
+                          type: string
+                          default: "Lost_And_Stolen"
+              
+  errorModel:
+    type: object
+    required:
+      - RequestStatus
+      - MessageDetail
+    properties:
+      RequestStatus:
+        type: string
+      MessageDetail:
+        type: object
+        properties:
+          MessageCode:
+            type: string
+          MessageType:
+            type: string
+          UserMessage:
+            type: string
+          MessageLevel:
+            type: string
+          MessageSeverity:
+            type: string
+          MessageList:
+            type: object
+            properties:
+              Message:
+                type: array
+                items:
+                  type: string       
