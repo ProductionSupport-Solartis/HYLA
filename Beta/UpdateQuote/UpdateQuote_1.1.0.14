@@ -184,6 +184,9 @@ definitions:
               default: "329498988990521"
             lockedTime: 
               type: string
+            billingTerm:
+              type: string
+              default: "monthly"
               
   UpdateQuote_Success_Response:
     type: object
