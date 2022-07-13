@@ -79,10 +79,10 @@ definitions:
         properties:
           UserName: 
             type: string
-            default: "hylasystemadmin"
+            default: "assurantsystemadmin"
           Password:
             type: string
-            default: "hylaadmin*1"
+            default: "@dmin@ssur*1"
             
   Authenication_Success_Response:
     type: object
