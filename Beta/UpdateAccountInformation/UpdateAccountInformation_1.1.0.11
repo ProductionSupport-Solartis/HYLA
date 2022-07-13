@@ -27,7 +27,7 @@ paths:
           required: true
           type: string
           format: string
-          default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+          default: "rfpdtF78ddgJHn5skBctQJs/k8z2rMuu/lEAK/rYmmbpF+xkvhKjZObAo3WW6HVSWC7ISA8SGjZay7ClBDEgjxEyhZu0qglFt53deJYiu/SEA128OGf54s/FLN5ktW8gG1bPcgH/VaYvjq0jk/RGqV9lY4JsHIFgM0m8cPzxqT8lSZNmfcOAKaNVCakEqb2x/C1HtQXxKQy1pzoDnLNTpD6rsG+BdExytBRMvxGwiS2c9TFbq+r772sVO5oN0NNWAlK266v27z7x8qsZP2fUnQUAHaLAlSQDwed4ORFWEwlL8MbB6BdQn2T/97Fjcd8kc4+zckEEr6EXwtuZ2CpMVUNxSgQzwyiQn97Z0zUw8967MQIJYFsB+UgQQR8iVGpmwiZDG1oMFz/YzN0Us7mRk1vpshBAHaUzDTwCYD6xyHIdz1IjK2LmRr91N7dr5eAK/haDq6f5LcpE+9shr2yyNLlS364+TdnvTnEFapDDGPTj0iJfbZTSEYxNqNTE1EjsdFC/hZQBxfMaRdFHMIe6ZxzP80ekwhItgT/Rl8mxCDcluzxITyC7C7gfXiMQFQB1G48Rf4z+zjv3aYvAyeyP88Dv6UL6x2EPePx68V+r0KZ4mtrT6ro82uT6TFAh0UoeGpX50TkGKhoJcPrWGVvXsA=="
         - name: EventName
           in: header
           description: Name of the event to be invoked
@@ -96,7 +96,7 @@ definitions:
             default: "hylaadmin"
           Token:
             type: string
-            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+            default: "rfpdtF78ddgJHn5skBctQJs/k8z2rMuu/lEAK/rYmmbpF+xkvhKjZObAo3WW6HVSWC7ISA8SGjZay7ClBDEgjxEyhZu0qglFt53deJYiu/SEA128OGf54s/FLN5ktW8gG1bPcgH/VaYvjq0jk/RGqV9lY4JsHIFgM0m8cPzxqT8lSZNmfcOAKaNVCakEqb2x/C1HtQXxKQy1pzoDnLNTpD6rsG+BdExytBRMvxGwiS2c9TFbq+r772sVO5oN0NNWAlK266v27z7x8qsZP2fUnQUAHaLAlSQDwed4ORFWEwlL8MbB6BdQn2T/97Fjcd8kc4+zckEEr6EXwtuZ2CpMVUNxSgQzwyiQn97Z0zUw8967MQIJYFsB+UgQQR8iVGpmwiZDG1oMFz/YzN0Us7mRk1vpshBAHaUzDTwCYD6xyHIdz1IjK2LmRr91N7dr5eAK/haDq6f5LcpE+9shr2yyNLlS364+TdnvTnEFapDDGPTj0iJfbZTSEYxNqNTE1EjsdFC/hZQBxfMaRdFHMIe6ZxzP80ekwhItgT/Rl8mxCDcluzxITyC7C7gfXiMQFQB1G48Rf4z+zjv3aYvAyeyP88Dv6UL6x2EPePx68V+r0KZ4mtrT6ro82uT6TFAh0UoeGpX50TkGKhoJcPrWGVvXsA=="
           ServiceRequestVersion:
             type: string
             default: "1.0"
@@ -185,7 +185,7 @@ definitions:
             default: "hylaadmin"
           Token:
             type: string
-            default: "F8nZyN0ndRGRZHgZkyXowDqHlpYVMg1iC/2bRIGf80MXhrh3Ucj08r4rsjBKtVfypTx9ugddNGo9tzdbiNctfqrqAUtHNLkYLTu2V3SEK5ncZjJZk90jmKW4J3T7O/EOyZgAmPcb/r1YUqxsFfxQFw5vE6VcCSB4nRyV3wY6Ra3xY6GAoMTBy/Jb9MORWDyHiT2MIlwVWrhGL4rOaGUptFiIvxj2SPtX/uSaBdTKoooQC8RViOYBcRabimW6EwXbN7W4yfuF2tdCh9gsYIz3YikKRCFlLu8hz5VzX3BgDvwUPzEyhqrYLjaC5bO5vv46Ljw3JzTIEoyABPiYSGRy5/jbGXnBN6xpHnAJoy9y5+htO65vcfElzduQiTqQyp+dusaFktLR0PMuq7FQCq/0G2F/LvaE7p6ZhBnkPwf8v+E1DMqkAwup7CAYPN/2Oac8ruuP8ZuCe3YrajQom0ECyPzP29ZcmJQhG1AmwTB5Jq5bulWbpGTnZiZpf3sOVT07iN+fd7T3gxh1DaUfhnRiJbH6t0FaMQUrGWDd1m5nopv1Za3ZD7MZYQSHvUJHO6gM6StSW+OqkyXMUNBBnhhHZBbZ6/WIq/RQxv5sNEcRbbauh/q5O7QPPEsCeauxj5TV"
+            default: "rfpdtF78ddgJHn5skBctQJs/k8z2rMuu/lEAK/rYmmbpF+xkvhKjZObAo3WW6HVSWC7ISA8SGjZay7ClBDEgjxEyhZu0qglFt53deJYiu/SEA128OGf54s/FLN5ktW8gG1bPcgH/VaYvjq0jk/RGqV9lY4JsHIFgM0m8cPzxqT8lSZNmfcOAKaNVCakEqb2x/C1HtQXxKQy1pzoDnLNTpD6rsG+BdExytBRMvxGwiS2c9TFbq+r772sVO5oN0NNWAlK266v27z7x8qsZP2fUnQUAHaLAlSQDwed4ORFWEwlL8MbB6BdQn2T/97Fjcd8kc4+zckEEr6EXwtuZ2CpMVUNxSgQzwyiQn97Z0zUw8967MQIJYFsB+UgQQR8iVGpmwiZDG1oMFz/YzN0Us7mRk1vpshBAHaUzDTwCYD6xyHIdz1IjK2LmRr91N7dr5eAK/haDq6f5LcpE+9shr2yyNLlS364+TdnvTnEFapDDGPTj0iJfbZTSEYxNqNTE1EjsdFC/hZQBxfMaRdFHMIe6ZxzP80ekwhItgT/Rl8mxCDcluzxITyC7C7gfXiMQFQB1G48Rf4z+zjv3aYvAyeyP88Dv6UL6x2EPePx68V+r0KZ4mtrT6ro82uT6TFAh0UoeGpX50TkGKhoJcPrWGVvXsA=="
           ServiceResponseVersion:
             type: string 
             default: "1.0"
